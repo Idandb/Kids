@@ -32,14 +32,7 @@ export function Hero() {
           <p className="anim-fade-up max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty [animation-delay:200ms] md:text-xl">
             מיצוי זכויות מלא להורים לילדים עם מוגבלות: קצבה חודשית מביטוח לאומי, הפרעות
             קשב וריכוז (ADHD), אוטיזם, תסמונת דאון ועוד. אנחנו בונים את התיק, מלווים אתכם
-            לוועדות ודואגים גם להחזר רטרו — וגם לכל{' '}
-            <Link
-              href="/guides/hidden-benefits"
-              className="font-semibold text-accent underline underline-offset-2 hover:text-gold"
-            >
-              ההטבות הנוספות
-            </Link>{' '}
-            שרוב המשפחות מפספסות.
+            לוועדות ודואגים גם להחזר רטרו — וגם לכל ההטבות הנוספות שרוב המשפחות מפספסות.
           </p>
           <p className="anim-fade-up text-base font-semibold text-foreground [animation-delay:250ms]">
             התשלום? על בסיס הצלחה בלבד. לא קיבלתם — לא שילמתם.
