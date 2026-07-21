@@ -102,7 +102,7 @@ export default function ConditionsIndexPage() {
               )}
               <Link
                 href={c.href}
-                className={`card-lift group relative flex h-full flex-col gap-3 rounded-2xl border bg-card p-6 shadow-soft hover:border-gold/50 ${
+                className={`card-lift group relative flex h-full flex-col gap-3 rounded-2xl border bg-card p-6 shadow-elevated hover:border-gold/50 ${
                   c.featured ? 'border-gold/50 ring-1 ring-gold/20' : 'border-border'
                 }`}
               >

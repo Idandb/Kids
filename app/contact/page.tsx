@@ -64,7 +64,7 @@ export default function ContactPage() {
           className="anim-float absolute -top-32 -left-24 h-96 w-96 rounded-full bg-gold/10 blur-[130px]"
           aria-hidden="true"
         />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 md:py-20 lg:grid-cols-[1.2fr_1fr] lg:px-8">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 md:py-24 lg:grid-cols-[1.2fr_1fr] lg:px-8">
           <div className="flex flex-col gap-5">
             <p className="anim-fade-up kicker w-fit backdrop-blur-sm">נחזור אליכם עוד היום</p>
             <h1 className="anim-fade-up font-serif text-3xl leading-tight text-balance [animation-delay:100ms] md:text-5xl">
@@ -91,11 +91,11 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 md:py-16 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-16 md:py-24 lg:px-8">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {contactChannels.map((channel, i) => (
             <Reveal key={channel.title} delay={i * 90} className="h-full">
-              <div className="card-lift flex h-full flex-col gap-3 rounded-2xl border border-border bg-card p-6 shadow-soft hover:border-gold/40">
+              <div className="card-lift flex h-full flex-col gap-3 rounded-2xl bg-card p-6 shadow-elevated ring-1 ring-transparent hover:ring-gold/30">
                 <span className="flex h-13 w-13 items-center justify-center rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 ring-1 ring-gold/20">
                   <channel.icon className="h-7 w-7 text-gold" aria-hidden="true" />
                 </span>
@@ -123,7 +123,7 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-secondary">
-        <div className="mx-auto max-w-7xl px-4 py-14 md:py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-16 md:py-24 lg:px-8">
           <Reveal className="mx-auto mb-12 flex max-w-2xl flex-col items-center gap-4 text-center">
             <p className="kicker">
               מה קורה אחרי שפונים?
@@ -136,7 +136,7 @@ export default function ContactPage() {
             {nextSteps.map((step, i) => (
               <li key={step.num} className="h-full">
                 <Reveal delay={i * 110} className="h-full">
-                  <div className="card-lift flex h-full flex-col gap-4 rounded-2xl bg-card p-7 shadow-soft">
+                  <div className="card-lift flex h-full flex-col gap-4 rounded-2xl bg-card p-7 shadow-elevated">
                     <span
                       className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-gold to-gold/70 font-serif text-xl text-navy"
                       aria-hidden="true"

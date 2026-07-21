@@ -68,10 +68,10 @@ export default function BenefitAmountsPage() {
       />
 
       <section>
-        <div className="mx-auto max-w-5xl px-4 py-12 md:py-16 lg:px-8">
+        <div className="mx-auto max-w-5xl px-4 py-16 md:py-24 lg:px-8">
           <Reveal>
             <h2 className="mb-6 font-serif text-2xl leading-tight text-balance md:text-3xl">חמש דרגות הקצבה</h2>
-            <div className="overflow-x-auto rounded-2xl border border-border shadow-soft">
+            <div className="overflow-x-auto rounded-2xl border border-border shadow-elevated">
               <table className="w-full min-w-[480px] border-collapse text-right text-sm md:text-base">
                 <thead>
                   <tr className="bg-secondary">
@@ -96,12 +96,12 @@ export default function BenefitAmountsPage() {
       </section>
 
       <section className="bg-secondary">
-        <div className="mx-auto max-w-5xl px-4 py-12 md:py-16 lg:px-8">
+        <div className="mx-auto max-w-5xl px-4 py-16 md:py-24 lg:px-8">
           <Reveal>
             <h2 className="mb-6 font-serif text-2xl leading-tight text-balance md:text-3xl">תוספות לקצבה</h2>
             <div className="grid gap-5 md:grid-cols-3">
               {additions.map((a) => (
-                <div key={a.title} className="card-lift flex flex-col gap-2 rounded-2xl border border-border bg-card p-6 shadow-soft">
+                <div key={a.title} className="card-lift flex flex-col gap-2 rounded-2xl border border-border bg-card p-6 shadow-elevated">
                   <h3 className="font-serif text-lg leading-snug">{a.title}</h3>
                   <p className="font-serif text-2xl text-gold">{a.amount}</p>
                   <p className="text-sm leading-relaxed text-muted-foreground">{a.desc}</p>
@@ -113,7 +113,7 @@ export default function BenefitAmountsPage() {
       </section>
 
       <section>
-        <div className="mx-auto max-w-5xl px-4 py-12 md:py-16 lg:px-8">
+        <div className="mx-auto max-w-5xl px-4 py-16 md:py-24 lg:px-8">
           <Reveal>
             <h2 className="mb-3 font-serif text-2xl leading-tight text-balance md:text-3xl">
               משפחה עם שני ילדים נכים ומעלה
@@ -121,7 +121,7 @@ export default function BenefitAmountsPage() {
             <p className="mb-6 leading-relaxed text-muted-foreground">
               מכפיל 1.5 על הקצבה שנקבעה לכל ילד — אמור להשתלם אוטומטית, אבל יש פספוסים ויש לבדוק.
             </p>
-            <div className="overflow-x-auto rounded-2xl border border-border shadow-soft">
+            <div className="overflow-x-auto rounded-2xl border border-border shadow-elevated">
               <table className="w-full min-w-[480px] border-collapse text-right text-sm md:text-base">
                 <thead>
                   <tr className="bg-secondary">

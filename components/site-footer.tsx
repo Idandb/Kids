@@ -5,9 +5,14 @@ import { WhatsAppIcon } from '@/components/whatsapp-icon'
 
 export function SiteFooter() {
   return (
-    <footer className="bg-navy text-navy-foreground">
-      <div className="h-px bg-gradient-to-l from-transparent via-gold/50 to-transparent" aria-hidden="true" />
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+    <footer className="relative overflow-hidden bg-navy text-navy-foreground">
+      <div className="bg-dots absolute inset-0" aria-hidden="true" />
+      <div
+        className="anim-float absolute -bottom-40 right-1/4 h-96 w-96 rounded-full bg-gold/8 blur-[140px]"
+        aria-hidden="true"
+      />
+      <div className="relative h-px bg-gradient-to-l from-transparent via-gold/50 to-transparent" aria-hidden="true" />
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div className="flex flex-col gap-4">
           <div className="w-fit rounded-2xl bg-white px-4 py-2.5 shadow-lg shadow-black/20">
             <Image
@@ -104,7 +109,7 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="border-t border-navy-foreground/15">
+      <div className="relative border-t border-navy-foreground/15">
         <div className="mx-auto max-w-7xl px-4 py-6 lg:px-8">
           <p className="text-xs leading-relaxed text-navy-foreground/60">
             הבהרה משפטית: חברת מגן זכות מעניקה שירותי סיוע מקצועיים להורים במיצוי זכויות ילדים עם מוגבלות מול

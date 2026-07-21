@@ -32,10 +32,8 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 border-b transition-all duration-300',
-        scrolled
-          ? 'border-border bg-background/95 shadow-lg shadow-navy/5 backdrop-blur-md'
-          : 'border-transparent bg-background',
+        'sticky top-0 z-50 border-b border-border/60 bg-background/95 backdrop-blur-md transition-shadow duration-300',
+        scrolled ? 'shadow-lg shadow-navy/5' : 'shadow-sm shadow-navy/[0.03]',
       )}
     >
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
@@ -93,7 +91,7 @@ export function SiteHeader() {
         )}
       >
         <nav className="overflow-hidden" aria-label="ניווט נייד" {...(open ? {} : { inert: true })}>
-          <div className="flex flex-col gap-1 border-t border-border px-4 py-4">
+          <div className="flex flex-col gap-1 border-t border-border/60 px-4 py-4">
             {navItems.map((item, i) => (
               <Link
                 key={item.href}

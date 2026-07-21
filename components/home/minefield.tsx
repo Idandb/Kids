@@ -46,7 +46,7 @@ export function Minefield() {
             וכל מכתב רפואי צריך להיות מנוסח במדויק לפי מה שהוועדה בודקת. אנחנו בונים לכם תיק
             שעונה אחד לאחד על הדרישות — כדי שהילד יקבל את הדרגה שבאמת מגיעה לו.
           </p>
-          <div className="group relative aspect-[16/10] overflow-hidden rounded-2xl shadow-soft">
+          <div className="group relative aspect-[16/10] overflow-hidden rounded-2xl shadow-elevated">
             <Image
               src="/images/consultation.png"
               alt="מומחה מלווה הורים בתהליך מיצוי הזכויות לילד"

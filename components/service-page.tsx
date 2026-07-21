@@ -69,7 +69,7 @@ export function ServiceHero({
         aria-hidden="true"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" aria-hidden="true" />
-      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 md:py-20 lg:grid-cols-[1.2fr_1fr] lg:px-8">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 md:py-24 lg:grid-cols-[1.2fr_1fr] lg:px-8">
         <div className="flex flex-col gap-5">
           <p className="anim-fade-up kicker w-fit backdrop-blur-sm">{badge}</p>
           <h1 className="anim-fade-up font-serif text-3xl leading-tight text-balance [animation-delay:100ms] md:text-5xl">
@@ -124,7 +124,7 @@ export function Section({
 }) {
   return (
     <section className={muted ? 'bg-secondary' : undefined}>
-      <div className="mx-auto max-w-4xl px-4 py-12 md:py-16 lg:px-8">
+      <div className="mx-auto max-w-4xl px-4 py-16 md:py-24 lg:px-8">
         <Reveal>
           <h2 className="mb-6 font-serif text-2xl leading-tight text-balance md:text-3xl">{title}</h2>
           <div className="flex flex-col gap-4 text-base leading-relaxed text-muted-foreground md:text-lg">{children}</div>

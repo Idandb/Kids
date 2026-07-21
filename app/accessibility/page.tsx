@@ -21,8 +21,13 @@ const features = [
 export default function AccessibilityPage() {
   return (
     <main>
-      <section className="bg-navy text-navy-foreground">
-        <div className="mx-auto flex max-w-4xl flex-col gap-5 px-4 py-14 md:py-20 lg:px-8">
+      <section className="relative overflow-hidden bg-navy text-navy-foreground">
+        <div className="bg-dots absolute inset-0" aria-hidden="true" />
+        <div
+          className="anim-float absolute -top-32 -left-24 h-96 w-96 rounded-full bg-gold/10 blur-[130px]"
+          aria-hidden="true"
+        />
+        <div className="relative mx-auto flex max-w-4xl flex-col gap-5 px-4 py-16 md:py-24 lg:px-8">
           <p className="anim-fade-up flex w-fit items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-sm font-medium text-gold">
             <PersonStanding className="h-4 w-4" aria-hidden="true" />
             נגישות לכולם
@@ -37,7 +42,7 @@ export default function AccessibilityPage() {
         </div>
       </section>
 
-      <section className="mx-auto flex max-w-4xl flex-col gap-10 px-4 py-12 md:py-16 lg:px-8">
+      <section className="mx-auto flex max-w-4xl flex-col gap-10 px-4 py-16 md:py-24 lg:px-8">
         <div className="flex flex-col gap-4">
           <h2 className="font-serif text-2xl md:text-3xl">מחויבות לנגישות</h2>
           <p className="leading-relaxed text-muted-foreground">
@@ -68,7 +73,7 @@ export default function AccessibilityPage() {
             אנו ממשיכים לשפר את נגישות האתר כל העת. אם נתקלתם ברכיב שאינו נגיש או בקושי כלשהו
             בגלישה, נשמח שתפנו אלינו ונטפל בכך בהקדם האפשרי:
           </p>
-          <div className="flex flex-col gap-2.5 rounded-2xl border border-border bg-card p-6 shadow-soft">
+          <div className="flex flex-col gap-2.5 rounded-2xl border border-border bg-card p-6 shadow-elevated">
             <a
               href="tel:0535455667"
               className="flex w-fit items-center gap-2 font-semibold text-gold transition-colors hover:text-accent"
