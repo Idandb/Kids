@@ -20,6 +20,8 @@ const routes: { path: string; priority: number }[] = [
   { path: '/guides/appeal', priority: 0.8 },
   { path: '/contact', priority: 0.8 },
   { path: '/accessibility', priority: 0.3 },
+  { path: '/privacy-policy', priority: 0.3 },
+  { path: '/terms', priority: 0.3 },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

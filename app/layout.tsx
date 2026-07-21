@@ -6,6 +6,7 @@ import { SiteFooter } from '@/components/site-footer'
 import { AccessibilityWidget } from '@/components/accessibility-widget'
 import { WhatsAppFab } from '@/components/whatsapp-fab'
 import { MobileCtaBar } from '@/components/mobile-cta-bar'
+import { GoogleTag } from '@/components/google-tag'
 import { SpotlightCards } from '@/components/spotlight-cards'
 import { JsonLd } from '@/components/json-ld'
 import './globals.css'
@@ -109,6 +110,7 @@ export default function RootLayout({
   return (
     <html lang="he" dir="rtl" className={`bg-background ${assistant.variable} ${secular.variable}`}>
       <body className="antialiased pb-[calc(3.75rem+env(safe-area-inset-bottom))] lg:pb-0">
+        <GoogleTag />
         <noscript>
           <style>{`.reveal{opacity:1 !important;transform:none !important}`}</style>
         </noscript>

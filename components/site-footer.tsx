@@ -1,7 +1,10 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { Phone, Mail } from 'lucide-react'
 import { WhatsAppIcon } from '@/components/whatsapp-icon'
+import { trackConversion } from '@/lib/track'
 
 export function SiteFooter() {
   return (
@@ -76,7 +79,11 @@ export function SiteFooter() {
             ערר על החלטת ועדה
           </Link>
           <h3 className="mt-3 mb-1 font-serif text-base text-gold">יצירת קשר</h3>
-          <a href="tel:0535455667" className="flex items-center gap-2 text-sm text-navy-foreground/80 transition-colors hover:text-gold">
+          <a
+            href="tel:0535455667"
+            onClick={() => trackConversion('phone_click', { source: 'footer' })}
+            className="flex items-center gap-2 text-sm text-navy-foreground/80 transition-colors hover:text-gold"
+          >
             <Phone className="h-4 w-4" aria-hidden="true" />
             <span dir="ltr">053-5455667</span>
           </a>
@@ -84,6 +91,7 @@ export function SiteFooter() {
             href="https://wa.me/972535455667"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackConversion('whatsapp_click', { source: 'footer' })}
             className="flex items-center gap-2 text-sm text-navy-foreground/80 transition-colors hover:text-gold"
           >
             <WhatsAppIcon className="h-4 w-4" />
@@ -97,6 +105,7 @@ export function SiteFooter() {
           <h3 className="mb-1 font-serif text-base text-gold">יצירת קשר במייל</h3>
           <a
             href="mailto:info@magen-zchuyot.co.il"
+            onClick={() => trackConversion('email_click', { source: 'footer' })}
             className="flex items-center gap-2 text-sm text-navy-foreground/80 transition-colors hover:text-gold"
           >
             <Mail className="h-4 w-4" aria-hidden="true" />
@@ -126,6 +135,20 @@ export function SiteFooter() {
               className="underline-offset-2 transition-colors hover:text-gold hover:underline"
             >
               הצהרת נגישות
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link
+              href="/privacy-policy"
+              className="underline-offset-2 transition-colors hover:text-gold hover:underline"
+            >
+              מדיניות פרטיות
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link
+              href="/terms"
+              className="underline-offset-2 transition-colors hover:text-gold hover:underline"
+            >
+              תקנון האתר
             </Link>
             <span aria-hidden="true">·</span>
             <span>

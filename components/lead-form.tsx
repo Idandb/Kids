@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { ArrowRight, CheckCircle2, Send } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { trackConversion } from '@/lib/track'
@@ -315,7 +316,15 @@ export function LeadForm({
               className="mt-0.5 h-4 w-4 accent-[oklch(0.56_0.125_163)]"
             />
             <span className={dark ? 'text-navy-foreground/80' : 'text-muted-foreground'}>
-              קראתי ואני מאשר/ת את מדיניות הפרטיות ומסכים/ה לקבלת פנייה לצורך בדיקת הזכאות.
+              קראתי ואני מאשר/ת את{' '}
+              <Link
+                href="/privacy-policy"
+                target="_blank"
+                className="font-semibold underline underline-offset-2 hover:text-gold"
+              >
+                מדיניות הפרטיות
+              </Link>{' '}
+              ומסכים/ה לקבלת פנייה לצורך בדיקת הזכאות.
             </span>
           </label>
 

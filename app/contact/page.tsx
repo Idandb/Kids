@@ -3,6 +3,7 @@ import { Clock, Mail, Phone } from 'lucide-react'
 import { WhatsAppIcon } from '@/components/whatsapp-icon'
 import { LeadForm } from '@/components/lead-form'
 import { Reveal } from '@/components/reveal'
+import { TrackedLink } from '@/components/tracked-link'
 
 export const metadata: Metadata = {
   title: 'צור קשר — בדיקת זכאות חינם לילד/ה שלכם',
@@ -16,19 +17,24 @@ const contactChannels = [
     icon: Phone,
     title: 'טלפון',
     lines: ['מוקד זכאות ארצי'],
-    action: { href: 'tel:0535455667', label: '053-5455667', dir: 'ltr' as const },
+    action: { href: 'tel:0535455667', label: '053-5455667', dir: 'ltr' as const, event: 'phone_click' },
   },
   {
     icon: Mail,
     title: 'דוא"ל',
     lines: ['מענה תוך יום עסקים'],
-    action: { href: 'mailto:info@magen-zchuyot.co.il', label: 'info@magen-zchuyot.co.il', dir: 'ltr' as const },
+    action: {
+      href: 'mailto:info@magen-zchuyot.co.il',
+      label: 'info@magen-zchuyot.co.il',
+      dir: 'ltr' as const,
+      event: 'email_click',
+    },
   },
   {
     icon: WhatsAppIcon,
     title: 'וואטסאפ',
     lines: ['מענה מהיר בהודעה — בלי להמתין על הקו'],
-    action: { href: 'https://wa.me/972535455667', label: '053-5455667', dir: 'ltr' as const },
+    action: { href: 'https://wa.me/972535455667', label: '053-5455667', dir: 'ltr' as const, event: 'whatsapp_click' },
   },
   {
     icon: Clock,
@@ -77,13 +83,15 @@ export default function ContactPage() {
               השאירו פרטים או חייגו — ומומחה זכויות יחזור אליכם בהקדם, בדיסקרטיות מלאה
               וללא כל התחייבות.
             </p>
-            <a
+            <TrackedLink
               href="tel:0535455667"
+              event="phone_click"
+              params={{ source: 'contact_hero' }}
               className="anim-fade-up flex w-fit items-center gap-3 btn-gold rounded-full px-7 py-4 text-lg font-bold text-gold-foreground transition-all duration-300 [animation-delay:300ms] hover:-translate-y-0.5 active:translate-y-0"
             >
               <Phone className="h-5 w-5" aria-hidden="true" />
               <span>חייגו עכשיו: <span dir="ltr">053-5455667</span></span>
-            </a>
+            </TrackedLink>
           </div>
           <div className="anim-scale-in [animation-delay:250ms]">
             <LeadForm title="השאירו פרטים — ונחזור אליכם עוד היום" />
@@ -102,15 +110,17 @@ export default function ContactPage() {
                 <h2 className="font-serif text-lg">{channel.title}</h2>
                 <div className="flex flex-col gap-1 text-sm leading-relaxed text-muted-foreground">
                   {channel.action && (
-                    <a
+                    <TrackedLink
                       href={channel.action.href}
                       dir={channel.action.dir}
                       target={channel.action.href.startsWith('http') ? '_blank' : undefined}
                       rel={channel.action.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      event={channel.action.event}
+                      params={{ source: 'contact' }}
                       className="w-fit text-base font-bold text-gold transition-colors hover:text-accent"
                     >
                       {channel.action.label}
-                    </a>
+                    </TrackedLink>
                   )}
                   {channel.lines.map((line) => (
                     <p key={line}>{line}</p>
