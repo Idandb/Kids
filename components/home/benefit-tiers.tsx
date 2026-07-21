@@ -51,7 +51,12 @@ export function BenefitTiers() {
 
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
         {tiers.map((tier, i) => (
-          <Reveal key={tier.pct} delay={i * 70} className="h-full">
+          <Reveal key={tier.pct} delay={i * 70} className="relative h-full">
+            {tier.featured && (
+              <span className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold px-3 py-1 text-xs font-bold text-gold-foreground shadow-md">
+                הכי נפוץ
+              </span>
+            )}
             <div
               className={`card-lift relative flex h-full flex-col items-center gap-3 rounded-2xl p-6 text-center ${
                 tier.featured
@@ -59,11 +64,6 @@ export function BenefitTiers() {
                   : 'border border-border bg-card shadow-soft hover:border-gold/50'
               }`}
             >
-              {tier.featured && (
-                <span className="absolute -top-3 rounded-full bg-gold px-3 py-1 text-xs font-bold text-gold-foreground shadow-md">
-                  הכי נפוץ
-                </span>
-              )}
               <p className="font-serif text-3xl text-gold md:text-4xl">{tier.pct}</p>
               <p className="font-serif text-xl">
                 <CountUp text={tier.amount} />

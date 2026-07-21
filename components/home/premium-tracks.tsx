@@ -80,8 +80,13 @@ export function PremiumTracks() {
           <Reveal
             key={track.href}
             delay={i * 60}
-            className={track.featured ? 'h-full sm:col-span-2 lg:col-span-2' : 'h-full'}
+            className={track.featured ? 'relative h-full sm:col-span-2 lg:col-span-2' : 'h-full'}
           >
+            {track.featured && (
+              <span className="absolute -top-3 right-6 z-10 whitespace-nowrap rounded-full bg-gold px-3 py-1 text-xs font-bold text-gold-foreground shadow-md">
+                הכי מבוקש
+              </span>
+            )}
             <Link
               href={track.href}
               className={`card-lift group relative flex h-full gap-4 rounded-2xl border bg-card p-7 shadow-soft hover:border-gold/50 ${
@@ -90,11 +95,6 @@ export function PremiumTracks() {
                   : 'flex-col border-border'
               }`}
             >
-              {track.featured && (
-                <span className="absolute -top-3 right-6 rounded-full bg-gold px-3 py-1 text-xs font-bold text-gold-foreground shadow-md">
-                  הכי מבוקש
-                </span>
-              )}
               <div className={track.featured ? 'flex flex-1 flex-col gap-4' : 'contents'}>
                 <span
                   className={`flex items-center justify-center rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 ring-1 ring-gold/20 ${
