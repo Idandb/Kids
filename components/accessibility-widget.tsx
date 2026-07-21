@@ -163,7 +163,7 @@ export function AccessibilityWidget() {
         aria-label="תפריט נגישות"
         aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
-        className="flex h-[35px] w-[35px] items-center justify-center rounded-full bg-[#0072BC] text-white shadow-lg transition-transform duration-200 hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0072BC]"
+        className="flex h-[35px] w-[35px] items-center justify-center rounded-full bg-gradient-to-b from-[#2AA8FF] to-[#0060A8] text-white shadow-[0_2px_6px_rgba(0,96,168,0.35),0_10px_26px_-6px_rgba(0,96,168,0.6)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_10px_rgba(0,96,168,0.45),0_16px_34px_-6px_rgba(0,96,168,0.7)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0072BC]"
       >
         <AccessibilityIcon className="h-5 w-5" aria-hidden="true" />
       </button>
