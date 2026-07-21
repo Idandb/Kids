@@ -12,59 +12,65 @@ export function SiteFooter() {
           <div className="w-fit rounded-2xl bg-white px-4 py-2.5 shadow-lg shadow-black/20">
             <Image
               src="/images/logo.png"
-              alt="מגן זכות — מיצוי זכויות רפואיות"
+              alt="מגן זכות — מיצוי זכויות לילד נכה"
               width={704}
               height={333}
               className="h-16 w-auto object-contain"
             />
           </div>
           <p className="text-sm leading-relaxed text-navy-foreground/80">
-            צוות מומחי מיצוי זכויות, הפועל בשיתוף רופאים מומחים, יועצי מס ועורכי דין,
-            ומוביל עבורכם את תהליך מיצוי הזכויות מול ביטוח לאומי, מס הכנסה וחברות
-            הביטוח — מא&apos; ועד ת&apos;.
+            צוות מומחי מיצוי זכויות להורים לילדים עם מוגבלות, הפועל בשיתוף רופאים
+            מומחים, יועצי מס ועורכי דין — ומוביל עבורכם את מלוא הזכויות מול
+            ביטוח לאומי ומס הכנסה, מהתביעה הראשונה ועד שהכסף בחשבון.
           </p>
         </div>
 
-        <nav className="flex flex-col gap-2.5" aria-label="תחומי התמחות">
-          <h3 className="mb-1 font-serif text-base text-gold">תחומי התמחות</h3>
-          <Link href="/services/tax-exemption" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
-            פטור ממס הכנסה מטעמי בריאות
-          </Link>
-          <Link href="/services/work-accidents" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
-            תאונות עבודה ומיקרו-טראומה
-          </Link>
-          <Link href="/services/disability" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
-            נכות כללית וקצבת שירותים מיוחדים
-          </Link>
-          <Link href="/services/nursing" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
-            תביעות סיעוד
-          </Link>
-          <Link href="/services/adhd" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
+        <nav className="flex flex-col gap-2.5" aria-label="עילות זכאות">
+          <h3 className="mb-1 font-serif text-base text-gold">עילות זכאות</h3>
+          <Link href="/conditions/adhd" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
             הפרעות קשב וריכוז (ADHD)
           </Link>
-          <h3 className="mt-3 mb-1 font-serif text-base text-gold">מדריכים ומידע</h3>
+          <Link href="/conditions/autism" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
+            ילדים על הרצף האוטיסטי
+          </Link>
+          <Link href="/conditions/down-syndrome" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
+            תסמונת דאון וכרומוזומליות
+          </Link>
+          <Link href="/conditions/developmental-delay" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
+            עיכוב התפתחותי
+          </Link>
+          <Link href="/conditions/dependency" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
+            תלות והשגחה
+          </Link>
+          <Link href="/conditions/hearing-vision" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
+            ליקויי שמיעה, ראייה וגפיים
+          </Link>
+          <Link href="/conditions/cancer" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
+            ילדים במחלה אונקולוגית
+          </Link>
+          <Link href="/conditions/diabetes" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
+            סוכרת נעורים
+          </Link>
+        </nav>
+
+        <nav className="flex flex-col gap-2.5" aria-label="מדריכים ומידע">
+          <h3 className="mb-1 font-serif text-base text-gold">מדריכים ומידע</h3>
+          <Link href="/guides/benefit-amounts" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
+            סכומי הקצבה 2026
+          </Link>
+          <Link href="/guides/hidden-benefits" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
+            הטבות נלוות — מעבר לקצבה
+          </Link>
+          <Link href="/guides/turning-18" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
+            המעבר לגיל 18
+          </Link>
           <Link href="/guides/medical-committee" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
             הכנה לוועדה רפואית
           </Link>
           <Link href="/guides/appeal" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
             ערר על החלטת ועדה
           </Link>
-          <Link href="/conditions/diabetes" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
-            זכויות חולי סוכרת
-          </Link>
-          <Link href="/conditions/cancer" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
-            זכויות חולי סרטן
-          </Link>
-          <Link href="/conditions/stroke" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
-            זכויות אחרי אירוע מוחי
-          </Link>
-          <Link href="/conditions/autism" className="text-sm text-navy-foreground/80 transition-colors hover:text-gold">
-            ילדים על הרצף האוטיסטי
-          </Link>
-        </nav>
-
-        <div className="flex flex-col gap-2.5">
-          <h3 className="mb-1 font-serif text-base text-gold">יצירת קשר</h3>
+          <h3 className="mt-3 mb-1 font-serif text-base text-gold">יצירת קשר</h3>
           <a href="tel:0535455667" className="flex items-center gap-2 text-sm text-navy-foreground/80 transition-colors hover:text-gold">
             <Phone className="h-4 w-4" aria-hidden="true" />
             <span dir="ltr">053-5455667</span>
@@ -80,6 +86,10 @@ export function SiteFooter() {
               וואטסאפ: <span dir="ltr">053-5455667</span>
             </span>
           </a>
+        </nav>
+
+        <div className="flex flex-col gap-2.5">
+          <h3 className="mb-1 font-serif text-base text-gold">יצירת קשר במייל</h3>
           <a
             href="mailto:info@magen-zchuyot.co.il"
             className="flex items-center gap-2 text-sm text-navy-foreground/80 transition-colors hover:text-gold"
@@ -87,10 +97,7 @@ export function SiteFooter() {
             <Mail className="h-4 w-4" aria-hidden="true" />
             info@magen-zchuyot.co.il
           </a>
-        </div>
-
-        <div className="flex flex-col gap-2.5">
-          <h3 className="mb-1 font-serif text-base text-gold">שעות פעילות</h3>
+          <h3 className="mt-3 mb-1 font-serif text-base text-gold">שעות פעילות</h3>
           <p className="text-sm text-navy-foreground/80">ימים א&apos;-ה&apos;: 08:00-19:00</p>
           <p className="text-sm text-navy-foreground/80">יום ו&apos;: 08:00-13:00</p>
           <p className="mt-2 text-sm font-semibold text-gold">בדיקת זכאות ראשונית — חינם וללא התחייבות</p>
@@ -100,11 +107,11 @@ export function SiteFooter() {
       <div className="border-t border-navy-foreground/15">
         <div className="mx-auto max-w-7xl px-4 py-6 lg:px-8">
           <p className="text-xs leading-relaxed text-navy-foreground/60">
-            הבהרה משפטית: חברת מגן זכויות מעניקה שירותי סיוע מקצועיים במיצוי זכויות רפואיות מול המוסד לביטוח לאומי,
-            רשות המסים וחברות הביטוח. המידע המופיע באתר זה הינו מידע כללי בלבד, אינו מהווה ייעוץ משפטי, רפואי או
-            ייעוץ מס פרטני, ואין להסתמך עליו כתחליף לבדיקה מקצועית של נסיבות המקרה הפרטני. הסכומים והנתונים
-            המוצגים באתר מעודכנים לשנת 2026 וכפופים לשינויים בהתאם להוראות הדין. שכר הטרחה נגבה על בסיס הצלחה בלבד,
-            בכפוף ובהתאם למגבלות שכר הטרחה הקבועות בחוק. החברה פועלת בהתאם לדין הישראלי ולכללי האתיקה המקצועית.
+            הבהרה משפטית: חברת מגן זכויות מעניקה שירותי סיוע מקצועיים להורים במיצוי זכויות ילדים עם מוגבלות מול
+            המוסד לביטוח לאומי ורשות המסים, לרבות קצבת ילד נכה, הטבות נלוות והפרעות קשב וריכוז. המידע המופיע באתר
+            זה הינו מידע כללי בלבד, אינו מהווה ייעוץ משפטי, רפואי או ייעוץ מס פרטני, ואין להסתמך עליו כתחליף לבדיקה
+            מקצועית של נסיבות המקרה הפרטני. הסכומים והנתונים המוצגים באתר מעודכנים לשנת 2026 וכפופים לשינויים
+            בהתאם להוראות הדין. שכר הטרחה נגבה על בסיס הצלחה בלבד, בכפוף ובהתאם למגבלות שכר הטרחה הקבועות בחוק.
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-navy-foreground/60">
             <span>© {new Date().getFullYear()} מגן זכויות בע&quot;מ. כל הזכויות שמורות.</span>

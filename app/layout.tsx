@@ -5,6 +5,7 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { AccessibilityWidget } from '@/components/accessibility-widget'
 import { WhatsAppFab } from '@/components/whatsapp-fab'
+import { MobileCtaBar } from '@/components/mobile-cta-bar'
 import { SpotlightCards } from '@/components/spotlight-cards'
 import { JsonLd } from '@/components/json-ld'
 import './globals.css'
@@ -22,9 +23,9 @@ const secular = Heebo({
   variable: '--font-secular',
 })
 
-const defaultTitle = 'מגן זכויות | מיצוי זכויות רפואיות — פטור ממס הכנסה, קצבת נכות ותאונות עבודה'
+const defaultTitle = 'מגן זכויות | מיצוי זכויות לילד נכה — קצבת ביטוח לאומי והפרעות קשב וריכוז'
 const defaultDescription =
-  'מיצוי זכויות רפואיות מול ביטוח לאומי, מס הכנסה וחברות הביטוח: פטור ממס הכנסה, קצבת נכות כללית, תאונות עבודה, גמלת סיעוד והפרעות קשב. בדיקת זכאות חינם — תשלום על בסיס הצלחה בלבד.'
+  'מיצוי זכויות מלא להורים לילדים עם מוגבלות: קצבת ילד נכה מביטוח לאומי, הפרעות קשב וריכוז (ADHD), אוטיזם, תסמונת דאון ועוד. הטבות נלוות (חשמל, מים, ארנונה, נקודות זיכוי במס), ליווי לוועדות וערעורים. בדיקת זכאות חינם — תשלום על בסיס הצלחה בלבד.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -34,15 +35,15 @@ export const metadata: Metadata = {
   },
   description: defaultDescription,
   keywords: [
-    'מיצוי זכויות רפואיות',
-    'פטור ממס הכנסה',
-    'החזרי מס',
-    'קצבת נכות',
-    'נכות כללית',
-    'תאונת עבודה ביטוח לאומי',
-    'גמלת סיעוד',
-    'ועדה רפואית',
-    'אחוזי נכות',
+    'קצבת ילד נכה',
+    'מיצוי זכויות ילד נכה',
+    'הפרעות קשב וריכוז ילדים',
+    'ADHD ילד נכה',
+    'קצבת ילד נכה אוטיזם',
+    'ביטוח לאומי ילד נכה',
+    'ועדה רפואית ילד נכה',
+    'הטבות ילד נכה חשמל ארנונה',
+    'נקודות זיכוי מס ילד נכה',
     'בדיקת זכאות חינם',
   ],
   generator: 'v0.app',
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
     siteName: 'מגן זכויות',
     title: defaultTitle,
     description: defaultDescription,
-    images: [{ url: '/images/logo.png', width: 704, height: 333, alt: 'מגן זכות — מיצוי זכויות רפואיות' }],
+    images: [{ url: '/images/logo.png', width: 704, height: 333, alt: 'מגן זכות — מיצוי זכויות לילד נכה' }],
   },
   twitter: {
     card: 'summary',
@@ -87,6 +88,7 @@ const organizationSchema = {
   telephone: '+972-53-545-5667',
   email: 'info@magen-zchuyot.co.il',
   areaServed: { '@type': 'Country', name: 'Israel' },
+  knowsAbout: ['קצבת ילד נכה', 'הפרעות קשב וריכוז', 'אוטיזם', 'ביטוח לאומי', 'ועדה רפואית'],
   priceRange: 'תשלום על בסיס הצלחה בלבד',
   openingHours: ['Su-Th 08:00-19:00', 'Fr 08:00-13:00'],
   contactPoint: [
@@ -106,7 +108,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="he" dir="rtl" className={`bg-background ${assistant.variable} ${secular.variable}`}>
-      <body className="antialiased">
+      <body className="antialiased pb-[calc(3.75rem+env(safe-area-inset-bottom))] lg:pb-0">
         <noscript>
           <style>{`.reveal{opacity:1 !important;transform:none !important}`}</style>
         </noscript>
@@ -116,6 +118,7 @@ export default function RootLayout({
         <SiteFooter />
         <AccessibilityWidget />
         <WhatsAppFab />
+        <MobileCtaBar />
         <SpotlightCards />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

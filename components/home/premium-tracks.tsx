@@ -1,42 +1,64 @@
 import Link from 'next/link'
-import { ArrowLeft, Banknote, Brain, HardHat, HeartHandshake, HeartPulse, PhoneCall } from 'lucide-react'
+import { ArrowLeft, Baby, Brain, Dna, Droplets, Ear, HeartHandshake, HeartPulse, PhoneCall, Puzzle } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 
 const tracks = [
   {
-    href: '/services/tax-exemption',
-    icon: Banknote,
-    title: 'פטור ממס הכנסה מטעמי בריאות',
-    text: 'נכות רפואית משוקללת של 90% ומעלה עשויה לזכות אתכם בפטור מלא ממס — כולל החזר מזומן רטרואקטיבי.',
-    stat: 'עד 445,200 ₪ בשנה + החזר 6 שנים אחורה',
-  },
-  {
-    href: '/services/work-accidents',
-    icon: HardHat,
-    title: 'תאונות עבודה ומיקרו-טראומה',
-    text: 'פגיעה חד-פעמית או שחיקה של שנים — ההבדל בין 19% ל-20% נכות הוא ההבדל בין מענק לקצבה לכל החיים.',
-    stat: 'קצבה חודשית פטורה ממס — לכל החיים',
-  },
-  {
-    href: '/services/disability',
-    icon: HeartHandshake,
-    title: 'נכות כללית ושירותים מיוחדים (שר"ם)',
-    text: 'שתי קצבאות נפרדות שאפשר במקרים רבים לקבל במקביל — אם מגישים נכון, בסדר הנכון.',
-    stat: 'שילוב קצבאות של 14,000+ ₪ בחודש',
-  },
-  {
-    href: '/services/nursing',
-    icon: HeartPulse,
-    title: 'תביעות סיעוד',
-    text: 'גמלת ביטוח לאומי לצד הביטוח הסיעודי של קופת החולים — רוב המשפחות לא יודעות שאפשר לתבוע את שניהם.',
-    stat: 'עד 5,000 ₪ לחודש מהביטוח הפרטי — במקביל לגמלה',
-  },
-  {
-    href: '/services/adhd',
+    href: '/conditions/adhd',
     icon: Brain,
     title: 'הפרעות קשב וריכוז (ADHD)',
-    text: 'להורים לילדים עם ADHD ולמבוגרים שחיים עם זה — הטבות מס וקצבאות שכמעט אף אחד לא ממצה.',
-    stat: 'נקודות זיכוי + החזר רטרואקטיבי עד 6 שנים',
+    text: 'טבלת ניקוד ברורה קובעת את הדרגה. מכתב מנוסח נכון מהרופא יכול להעלות את הילד מ-50% ל-100%.',
+    stat: '50%–100% לפי ניקוד + החזר מס עד 6 שנים',
+    featured: true,
+  },
+  {
+    href: '/conditions/autism',
+    icon: Puzzle,
+    title: 'ילדים על הרצף האוטיסטי',
+    text: 'אבחנה על הרצף מזכה ב-100% קבוע, ללא קשר לרמת התפקוד — אם התיק מוגש נכון מהפעם הראשונה.',
+    stat: '100% קבוע, לרוב עד גיל הבגרות',
+  },
+  {
+    href: '/conditions/down-syndrome',
+    icon: Dna,
+    title: 'תסמונת דאון וכרומוזומליות',
+    text: 'זכאות כמעט אוטומטית מלידה, במדרגות ברורות לפי גיל — ובגיל 6 יש לבדוק זכאות מחדש.',
+    stat: '100% מגיל 91 יום ועד גיל 6',
+  },
+  {
+    href: '/conditions/developmental-delay',
+    icon: Baby,
+    title: 'עיכוב התפתחותי',
+    text: 'מגיל 91 יום עד גיל 3 בדיוק. הרטרו כאן מוגבל ל-6 חודשים בלבד — כל עיכוב בהגשה הוא כסף אבוד.',
+    stat: 'רטרו מוגבל ל-6 חודשים — דחוף',
+  },
+  {
+    href: '/conditions/dependency',
+    icon: HeartHandshake,
+    title: 'תלות והשגחה',
+    text: 'מגיל 3 עד 18. ככל שהתלות בפעולות היומיום גבוהה יותר — הדרגה עולה, עד 235%.',
+    stat: 'עד 9,126 ₪ בחודש + הנחת חשמל',
+  },
+  {
+    href: '/conditions/hearing-vision',
+    icon: Ear,
+    title: 'ליקויי שמיעה, ראייה וגפיים',
+    text: 'ליקויים שמתועדים באודיוגרמה, בדיקת עיניים או קריוטיפ — לרוב מאושרים ללא זימון לוועדה כלל.',
+    stat: 'עד 100% — לרוב בלי ועדה',
+  },
+  {
+    href: '/conditions/cancer',
+    icon: HeartPulse,
+    title: 'ילדים במחלה אונקולוגית',
+    text: 'בתקופת הטיפולים הכימותרפיים או ההקרנות — הדרגה הגבוהה ביותר שקיימת בחוק.',
+    stat: '235% בתקופת הטיפולים + חודש נוסף',
+  },
+  {
+    href: '/conditions/diabetes',
+    icon: Droplets,
+    title: 'סוכרת נעורים',
+    text: 'בשנה הראשונה למחלה ועד גיל 6 יש זכאות כמעט אוטומטית — ובהמשך לפי איזון ומעקב.',
+    stat: '100% עד גיל 6',
   },
 ]
 
@@ -44,22 +66,29 @@ export function PremiumTracks() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-20 md:py-28 lg:px-8">
       <Reveal className="mx-auto mb-12 flex max-w-2xl flex-col items-center gap-4 text-center">
-        <p className="kicker">תחומי ההתמחות שלנו</p>
+        <p className="kicker">עילות הזכאות שלנו</p>
         <h2 className="font-serif text-3xl leading-tight text-balance md:text-4xl">
-          כל הזכויות שלך. מקום אחד. בדיקה אחת.
+          כל עילות הזכאות של הילד. מקום אחד, בדיקה אחת.
         </h2>
         <p className="text-lg leading-relaxed text-muted-foreground text-pretty">
-          חמישה מסלולי זכאות מרכזיים — ולעיתים קרובות הזכאות האמיתית נמצאת דווקא בשילוב ביניהם.
+          שמונה עילות מרכזיות — ולעיתים קרובות הזכאות האמיתית נמצאת דווקא בשילוב ביניהן.
         </p>
       </Reveal>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {tracks.map((track, i) => (
-          <Reveal key={track.href} delay={i * 80} className="h-full">
+          <Reveal key={track.href} delay={i * 60} className="h-full">
             <Link
               href={track.href}
-              className="card-lift group flex h-full flex-col gap-4 rounded-2xl border border-border bg-card p-7 shadow-soft hover:border-gold/50"
+              className={`card-lift group relative flex h-full flex-col gap-4 rounded-2xl border bg-card p-7 shadow-soft hover:border-gold/50 ${
+                track.featured ? 'border-gold/50 ring-1 ring-gold/20' : 'border-border'
+              }`}
             >
+              {track.featured && (
+                <span className="absolute -top-3 right-6 rounded-full bg-gold px-3 py-1 text-xs font-bold text-gold-foreground shadow-md">
+                  הכי מבוקש
+                </span>
+              )}
               <span className="flex h-13 w-13 items-center justify-center rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 ring-1 ring-gold/20">
                 <track.icon className="h-7 w-7 text-gold" aria-hidden="true" />
               </span>
@@ -80,7 +109,7 @@ export function PremiumTracks() {
         ))}
 
         {/* Completing CTA card */}
-        <Reveal delay={5 * 80} className="h-full">
+        <Reveal delay={8 * 60} className="h-full">
           <div className="relative flex h-full flex-col justify-center gap-4 overflow-hidden rounded-2xl bg-gradient-to-br from-navy to-[oklch(0.16_0.015_260)] p-7 text-navy-foreground">
             <div className="bg-dots absolute inset-0" aria-hidden="true" />
             <div
@@ -90,9 +119,9 @@ export function PremiumTracks() {
             <span className="relative flex h-13 w-13 items-center justify-center rounded-xl bg-gold/15 ring-1 ring-gold/30">
               <PhoneCall className="h-7 w-7 text-gold" aria-hidden="true" />
             </span>
-            <h3 className="relative font-serif text-xl leading-snug">לא בטוחים איזה מסלול מתאים לכם?</h3>
+            <h3 className="relative font-serif text-xl leading-snug">לא בטוחים אילו עילות מתאימות לילד?</h3>
             <p className="relative text-sm leading-relaxed text-navy-foreground/80">
-              בדיוק בשביל זה אנחנו כאן. שיחת אבחון אחת ממפה את כל המסלולים הרלוונטיים עבורכם — חינם וללא התחייבות.
+              בדיוק בשביל זה אנחנו כאן. שיחת אבחון אחת ממפה את כל העילות הרלוונטיות — חינם וללא התחייבות.
             </p>
             <Link
               href="/contact"

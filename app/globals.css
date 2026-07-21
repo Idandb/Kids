@@ -53,8 +53,8 @@
   --secondary: oklch(0.958 0.004 250);
   --secondary-foreground: oklch(0.24 0.02 260);
   --muted: oklch(0.958 0.004 250);
-  /* Darkened for readability (WCAG contrast on light backgrounds) */
-  --muted-foreground: oklch(0.4 0.015 260);
+  /* Darkened further for readability (WCAG contrast on light backgrounds) */
+  --muted-foreground: oklch(0.36 0.015 260);
   /* Emerald accent (keeps the historical --gold variable name) */
   --accent: oklch(0.56 0.125 163);
   --accent-foreground: oklch(0.99 0 0);
@@ -81,7 +81,7 @@
   }
   body {
     @apply bg-background text-foreground font-sans;
-    line-height: 1.7;
+    line-height: 1.75;
     text-rendering: optimizeLegibility;
   }
   h1,

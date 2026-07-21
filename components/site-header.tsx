@@ -9,11 +9,10 @@ import { cn } from '@/lib/utils'
 
 const navItems = [
   { href: '/', label: 'ראשי' },
-  { href: '/services/tax-exemption', label: 'פטור ממס הכנסה' },
-  { href: '/services/work-accidents', label: 'תאונות עבודה' },
-  { href: '/services/disability', label: 'נכות כללית ושר"ם' },
-  { href: '/services/nursing', label: 'תביעות סיעוד' },
-  { href: '/services/adhd', label: 'הפרעות קשב' },
+  { href: '/conditions/adhd', label: 'הפרעות קשב וריכוז' },
+  { href: '/conditions', label: 'עילות זכאות' },
+  { href: '/guides/benefit-amounts', label: 'סכומי הקצבה' },
+  { href: '/guides/hidden-benefits', label: 'הטבות נוספות' },
   { href: '/contact', label: 'צור קשר' },
 ]
 
@@ -42,7 +41,7 @@ export function SiteHeader() {
         <Link href="/" className="group flex items-center" onClick={() => setOpen(false)}>
           <Image
             src="/images/logo.png"
-            alt="מגן זכות — מיצוי זכויות רפואיות"
+            alt="מגן זכות — מיצוי זכויות לילד נכה"
             width={704}
             height={333}
             priority

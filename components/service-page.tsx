@@ -18,7 +18,7 @@ export function ServiceJsonLd({
   slug?: string
   path?: string
 }) {
-  const url = `${SITE_URL}${path ?? `/services/${slug}`}`
+  const url = `${SITE_URL}${path ?? `/conditions/${slug}`}`
   return (
     <JsonLd
       data={{
@@ -62,30 +62,25 @@ export function ServiceHero({
   formTitle: string
 }) {
   return (
-    <section className="relative overflow-hidden bg-navy text-navy-foreground">
+    <section className="relative overflow-hidden bg-background">
+      <div className="bg-grid absolute inset-0" aria-hidden="true" />
       <div
-        className="anim-float absolute -top-32 -left-24 h-96 w-96 rounded-full bg-gold/12 blur-[130px]"
+        className="anim-float absolute -top-32 -left-24 h-96 w-96 rounded-full bg-gold/10 blur-[130px]"
         aria-hidden="true"
       />
-      <div className="bg-dots absolute inset-0" aria-hidden="true" />
-      <div
-        className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent"
-        aria-hidden="true"
-      />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 md:py-20 lg:grid-cols-[1.2fr_1fr] lg:px-8">
         <div className="flex flex-col gap-5">
-          <p className="anim-fade-up w-fit rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-sm font-medium text-gold backdrop-blur-sm">
-            {badge}
-          </p>
+          <p className="anim-fade-up kicker w-fit backdrop-blur-sm">{badge}</p>
           <h1 className="anim-fade-up font-serif text-3xl leading-tight text-balance [animation-delay:100ms] md:text-5xl">
             {title}
           </h1>
-          <p className="anim-fade-up max-w-xl text-lg leading-relaxed text-navy-foreground/85 text-pretty [animation-delay:200ms]">
+          <p className="anim-fade-up max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty [animation-delay:200ms]">
             {subtitle}
           </p>
         </div>
         <div className="anim-scale-in [animation-delay:250ms]">
-          <LeadForm variant="dark" title={formTitle} />
+          <LeadForm title={formTitle} />
         </div>
       </div>
     </section>

@@ -3,12 +3,12 @@ import { ArrowLeft } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 
 const conditions = [
-  { href: '/conditions/diabetes', label: 'זכויות חולי סוכרת' },
-  { href: '/conditions/cancer', label: 'זכויות חולי סרטן' },
-  { href: '/conditions/stroke', label: 'זכויות אחרי אירוע מוחי' },
-  { href: '/conditions/autism', label: 'ילדים על הרצף האוטיסטי' },
+  { href: '/guides/benefit-amounts', label: 'סכומי הקצבה 2026' },
+  { href: '/guides/hidden-benefits', label: 'הטבות נוספות — מעבר לקצבה' },
+  { href: '/guides/turning-18', label: 'המעבר לגיל 18' },
   { href: '/guides/medical-committee', label: 'הכנה לוועדה רפואית' },
   { href: '/guides/appeal', label: 'ערר על החלטת ועדה' },
+  { href: '/conditions', label: 'כל עילות הזכאות' },
 ]
 
 export function ConditionsStrip() {
@@ -16,9 +16,9 @@ export function ConditionsStrip() {
     <section className="bg-secondary">
       <div className="mx-auto max-w-7xl px-4 py-14 md:py-20 lg:px-8">
         <Reveal className="mx-auto mb-8 flex max-w-2xl flex-col items-center gap-4 text-center">
-          <p className="kicker">מדריכים וזכויות לפי מצב רפואי</p>
+          <p className="kicker">מדריכים שכדאי להכיר</p>
           <h2 className="font-serif text-3xl leading-tight text-balance md:text-4xl">
-            מתמודדים עם אבחנה? בדקו מה מגיע לכם
+            כמה מגיע לכם, ואיך לא מפספסים
           </h2>
         </Reveal>
         <Reveal delay={120}>

@@ -3,8 +3,8 @@ import { LeadForm } from '@/components/lead-form'
 import { Reveal } from '@/components/reveal'
 
 export function CtaBand({
-  heading = 'אל תשאירו כסף אצל המדינה. בדקו זכאות עכשיו — חינם.',
-  sub = 'שיחת אבחון ראשונית עם מומחה, ללא עלות וללא התחייבות. אם אין זכאות — נגיד לכם ביושר.',
+  heading = 'אל תשאירו לילד שלכם כסף אצל המדינה. בדקו זכאות עכשיו — חינם.',
+  sub = 'שיחה קצרה עם מומחה זכויות, ללא עלות וללא התחייבות. אם אין זכאות — נגיד לכם ביושר.',
 }: {
   heading?: string
   sub?: string

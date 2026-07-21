@@ -20,18 +20,20 @@ export function Hero() {
         <div className="flex flex-col gap-6">
           <p className="anim-fade-up kicker backdrop-blur-sm">
             <ShieldCheck className="h-4 w-4" aria-hidden="true" />
-            מעל 500 לקוחות מיצו את זכויותיהם בהצלחה
+            מעל 500 משפחות מיצו את זכויות ילדיהן בהצלחה
           </p>
           <h1 className="anim-fade-up font-serif text-4xl leading-[1.12] text-balance [animation-delay:100ms] md:text-5xl lg:text-6xl">
-            המדינה חייבת לך <span className="gold-gradient-text">כסף</span>.
+            לילד שלכם <span className="gold-gradient-text">מגיע יותר</span>.
             <br />
-            אנחנו נוודא <span className="gold-gradient-text">שתקבל אותו</span>.
+            אנחנו נדאג <span className="gold-gradient-text">שתקבלו את זה</span>.
           </h1>
           <p className="anim-fade-up max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty [animation-delay:200ms] md:text-xl">
-            מיצוי זכויות רפואיות מקצועי — פטור ממס הכנסה, קצבת נכות, תאונות עבודה וגמלת סיעוד.
-            צוות מנוסה מלווה אתכם מול ביטוח לאומי ורשות המסים, בשיתוף רופאים מומחים, יועצי
-            מס ועורכי דין — מהמסמך הראשון ועד שהכסף בחשבון.
-            <strong className="text-foreground"> התשלום? על בסיס הצלחה בלבד. לא קיבלת — לא שילמת.</strong>
+            מיצוי זכויות מלא להורים לילדים עם מוגבלות: קצבת ילד נכה מביטוח לאומי, הפרעות
+            קשב וריכוז (ADHD), אוטיזם, תסמונת דאון ועוד. אנחנו בונים את התיק, מלווים אתכם
+            לוועדות ודואגים גם להטבות שרוב המשפחות מפספסות — חשמל, ארנונה ומס הכנסה.
+          </p>
+          <p className="anim-fade-up text-base font-semibold text-foreground [animation-delay:250ms]">
+            התשלום? על בסיס הצלחה בלבד. לא קיבלתם — לא שילמתם.
           </p>
 
           <div className="anim-fade-up flex flex-wrap items-center gap-4 [animation-delay:300ms]">
@@ -50,10 +52,10 @@ export function Hero() {
             </a>
           </div>
 
-          <div className="anim-fade-up flex items-center gap-5 text-sm text-muted-foreground [animation-delay:350ms]">
+          <div className="anim-fade-up flex flex-wrap items-center gap-5 text-sm text-muted-foreground [animation-delay:350ms]">
             <span className="flex items-center gap-1.5">
               <Stethoscope className="h-4 w-4 text-gold" aria-hidden="true" />
-              בשיתוף רופאים מומחים
+              כולל התמחות בהפרעות קשב וריכוז
             </span>
             <span className="flex items-center gap-1.5">
               <Scale className="h-4 w-4 text-gold" aria-hidden="true" />
@@ -64,27 +66,27 @@ export function Hero() {
           <div className="anim-fade-up mt-4 grid grid-cols-3 gap-4 border-t border-border pt-6 [animation-delay:400ms]">
             <div>
               <p className="font-serif text-2xl text-gold md:text-3xl">
-                <CountUp text="445,200 ₪" />
+                <CountUp text="9,126 ₪" />
               </p>
-              <p className="text-xs text-muted-foreground md:text-sm">תקרת פטור ממס לשנת 2026</p>
+              <p className="text-xs text-muted-foreground md:text-sm">קצבה חודשית מרבית לילד</p>
             </div>
             <div>
               <p className="font-serif text-2xl text-gold md:text-3xl">
-                <CountUp text="6 שנים" />
+                <CountUp text="12 חודשים" />
               </p>
-              <p className="text-xs text-muted-foreground md:text-sm">החזר מס רטרואקטיבי</p>
+              <p className="text-xs text-muted-foreground md:text-sm">תשלום רטרואקטיבי אפשרי</p>
             </div>
             <div>
               <p className="font-serif text-2xl text-gold md:text-3xl">
-                <CountUp text="96%" />
+                <CountUp text="500+" />
               </p>
-              <p className="text-xs text-muted-foreground md:text-sm">שביעות רצון לקוחות</p>
+              <p className="text-xs text-muted-foreground md:text-sm">משפחות שליווינו בהצלחה</p>
             </div>
           </div>
         </div>
 
         <div id="lead-form" className="anim-scale-in scroll-mt-24 [animation-delay:250ms]">
-          <LeadForm title="גלו תוך 24 שעות כמה כסף מגיע לכם" />
+          <LeadForm title="גלו תוך 24 שעות כמה כסף מגיע לילד שלכם" />
         </div>
       </div>
     </section>
