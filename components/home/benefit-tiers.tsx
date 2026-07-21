@@ -49,27 +49,27 @@ export function BenefitTiers() {
         </p>
       </Reveal>
 
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-5">
         {tiers.map((tier, i) => (
           <Reveal key={tier.pct} delay={i * 70} className="relative h-full">
             {tier.featured && (
-              <span className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold px-3 py-1 text-xs font-bold text-gold-foreground shadow-md">
+              <span className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold px-2.5 py-1 text-[11px] font-bold text-gold-foreground shadow-md sm:px-3 sm:text-xs">
                 הכי נפוץ
               </span>
             )}
             <div
-              className={`card-lift relative flex h-full flex-col items-center gap-3 rounded-2xl p-6 text-center ${
+              className={`card-lift relative flex h-full flex-col items-center gap-1.5 rounded-2xl p-3 text-center sm:gap-3 sm:p-6 ${
                 tier.featured
                   ? 'border border-gold/40 bg-gradient-to-b from-gold/12 to-card shadow-elevated ring-1 ring-gold/20 lg:-translate-y-2'
                   : 'border border-border bg-card shadow-soft hover:border-gold/50'
               }`}
             >
-              <p className="font-serif text-3xl text-gold md:text-4xl">{tier.pct}</p>
-              <p className="font-serif text-xl">
+              <p className="font-serif text-2xl text-gold sm:text-3xl md:text-4xl">{tier.pct}</p>
+              <p className="font-serif text-base sm:text-xl">
                 <CountUp text={tier.amount} />
-                <span className="mr-1 text-sm font-sans font-normal text-muted-foreground">בחודש</span>
+                <span className="mr-1 text-xs font-sans font-normal text-muted-foreground sm:text-sm">בחודש</span>
               </p>
-              <p className="text-sm leading-relaxed text-muted-foreground">{tier.desc}</p>
+              <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">{tier.desc}</p>
             </div>
           </Reveal>
         ))}

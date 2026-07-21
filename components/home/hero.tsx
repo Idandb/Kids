@@ -1,4 +1,5 @@
-import { Phone, ShieldCheck, Scale, Stethoscope } from 'lucide-react'
+import Link from 'next/link'
+import { Phone, ShieldCheck, Scale, Stethoscope, Gavel } from 'lucide-react'
 import { LeadForm } from '@/components/lead-form'
 import { CountUp } from '@/components/count-up'
 import { EligibilityMockup } from '@/components/home/eligibility-mockup'
@@ -31,7 +32,14 @@ export function Hero() {
           <p className="anim-fade-up max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty [animation-delay:200ms] md:text-xl">
             מיצוי זכויות מלא להורים לילדים עם מוגבלות: קצבה חודשית מביטוח לאומי, הפרעות
             קשב וריכוז (ADHD), אוטיזם, תסמונת דאון ועוד. אנחנו בונים את התיק, מלווים אתכם
-            לוועדות ודואגים גם להחזר רטרו, להטבות שרוב המשפחות מפספסות — חשמל, ארנונה ומס הכנסה.
+            לוועדות ודואגים גם להחזר רטרו — וגם לכל{' '}
+            <Link
+              href="/guides/hidden-benefits"
+              className="font-semibold text-accent underline underline-offset-2 hover:text-gold"
+            >
+              ההטבות הנוספות
+            </Link>{' '}
+            שרוב המשפחות מפספסות.
           </p>
           <p className="anim-fade-up text-base font-semibold text-foreground [animation-delay:250ms]">
             התשלום? על בסיס הצלחה בלבד. לא קיבלתם — לא שילמתם.
@@ -62,6 +70,10 @@ export function Hero() {
               <Scale className="h-4 w-4 text-gold" aria-hidden="true" />
               ליווי צמוד עד לתוצאה
             </span>
+            <Link href="/guides/appeal" className="flex items-center gap-1.5 transition-colors hover:text-accent">
+              <Gavel className="h-4 w-4 text-gold" aria-hidden="true" />
+              גם אם נדחיתם בעבר — יש ערר וערעור
+            </Link>
           </div>
 
           <div className="anim-fade-up mt-4 grid grid-cols-3 gap-4 border-t border-border pt-6 [animation-delay:400ms]">
