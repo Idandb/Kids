@@ -94,18 +94,18 @@ export default function ConditionsIndexPage() {
       <section className="mx-auto max-w-7xl px-4 pb-20 lg:px-8">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {conditions.map((c, i) => (
-            <Reveal key={c.href} delay={i * 60} className="h-full">
+            <Reveal key={c.href} delay={i * 60} className="relative h-full">
+              {c.featured && (
+                <span className="absolute -top-3 right-6 z-10 whitespace-nowrap rounded-full bg-gold px-3 py-1 text-xs font-bold text-gold-foreground shadow-md">
+                  הכי מבוקש
+                </span>
+              )}
               <Link
                 href={c.href}
                 className={`card-lift group relative flex h-full flex-col gap-3 rounded-2xl border bg-card p-6 shadow-soft hover:border-gold/50 ${
                   c.featured ? 'border-gold/50 ring-1 ring-gold/20' : 'border-border'
                 }`}
               >
-                {c.featured && (
-                  <span className="absolute -top-3 right-6 rounded-full bg-gold px-3 py-1 text-xs font-bold text-gold-foreground shadow-md">
-                    הכי מבוקש
-                  </span>
-                )}
                 <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 ring-1 ring-gold/20">
                   <c.icon className="h-6 w-6 text-gold" aria-hidden="true" />
                 </span>
