@@ -42,7 +42,7 @@ export function Minefield() {
             <span className="gold-gradient-text">אנחנו כאן כדי שלא.</span>
           </h2>
           <p className="text-lg leading-relaxed text-muted-foreground text-pretty">
-            תביעת ילד נכה היא לא &quot;מילוי טופס&quot;. כל אבחנה צריכה להיות ממופה לסעיף הנכון,
+            התביעה הזו היא לא &quot;מילוי טופס&quot;. כל אבחנה צריכה להיות ממופה לסעיף הנכון,
             וכל מכתב רפואי צריך להיות מנוסח במדויק לפי מה שהוועדה בודקת. אנחנו בונים לכם תיק
             שעונה אחד לאחד על הדרישות — כדי שהילד יקבל את הדרגה שבאמת מגיעה לו.
           </p>

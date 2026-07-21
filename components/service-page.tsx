@@ -32,7 +32,7 @@ export function ServiceJsonLd({
             areaServed: { '@type': 'Country', name: 'Israel' },
             provider: {
               '@type': 'ProfessionalService',
-              name: 'מגן זכויות',
+              name: 'מגן זכות',
               telephone: '+972-53-545-5667',
               url: SITE_URL,
             },

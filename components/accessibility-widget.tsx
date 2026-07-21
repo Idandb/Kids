@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { Accessibility, RotateCcw, X } from 'lucide-react'
+import { RotateCcw, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { AccessibilityIcon } from '@/components/accessibility-icon'
 
 const STORAGE_KEY = 'magen-a11y-settings'
 
@@ -164,7 +165,7 @@ export function AccessibilityWidget() {
         onClick={() => setOpen((o) => !o)}
         className="flex h-[35px] w-[35px] items-center justify-center rounded-full bg-[#0072BC] text-white shadow-lg transition-transform duration-200 hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0072BC]"
       >
-        <Accessibility className="h-5 w-5" aria-hidden="true" />
+        <AccessibilityIcon className="h-5 w-5" aria-hidden="true" />
       </button>
     </div>
   )

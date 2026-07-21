@@ -13,6 +13,7 @@ const navItems = [
   { href: '/conditions', label: 'עילות זכאות' },
   { href: '/guides/benefit-amounts', label: 'סכומי הקצבה' },
   { href: '/guides/hidden-benefits', label: 'הטבות נוספות' },
+  { href: '/guides/appeal', label: 'ערר וערעורים' },
   { href: '/contact', label: 'צור קשר' },
 ]
 

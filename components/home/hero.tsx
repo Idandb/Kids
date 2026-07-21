@@ -29,9 +29,9 @@ export function Hero() {
             אנחנו נדאג <span className="gold-gradient-text">שתקבלו את זה</span>.
           </h1>
           <p className="anim-fade-up max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty [animation-delay:200ms] md:text-xl">
-            מיצוי זכויות מלא להורים לילדים עם מוגבלות: קצבת ילד נכה מביטוח לאומי, הפרעות
+            מיצוי זכויות מלא להורים לילדים עם מוגבלות: קצבה חודשית מביטוח לאומי, הפרעות
             קשב וריכוז (ADHD), אוטיזם, תסמונת דאון ועוד. אנחנו בונים את התיק, מלווים אתכם
-            לוועדות ודואגים גם להטבות שרוב המשפחות מפספסות — חשמל, ארנונה ומס הכנסה.
+            לוועדות ודואגים גם להחזר רטרו, להטבות שרוב המשפחות מפספסות — חשמל, ארנונה ומס הכנסה.
           </p>
           <p className="anim-fade-up text-base font-semibold text-foreground [animation-delay:250ms]">
             התשלום? על בסיס הצלחה בלבד. לא קיבלתם — לא שילמתם.

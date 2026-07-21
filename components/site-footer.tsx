@@ -107,14 +107,14 @@ export function SiteFooter() {
       <div className="border-t border-navy-foreground/15">
         <div className="mx-auto max-w-7xl px-4 py-6 lg:px-8">
           <p className="text-xs leading-relaxed text-navy-foreground/60">
-            הבהרה משפטית: חברת מגן זכויות מעניקה שירותי סיוע מקצועיים להורים במיצוי זכויות ילדים עם מוגבלות מול
+            הבהרה משפטית: חברת מגן זכות מעניקה שירותי סיוע מקצועיים להורים במיצוי זכויות ילדים עם מוגבלות מול
             המוסד לביטוח לאומי ורשות המסים, לרבות קצבת ילד נכה, הטבות נלוות והפרעות קשב וריכוז. המידע המופיע באתר
             זה הינו מידע כללי בלבד, אינו מהווה ייעוץ משפטי, רפואי או ייעוץ מס פרטני, ואין להסתמך עליו כתחליף לבדיקה
             מקצועית של נסיבות המקרה הפרטני. הסכומים והנתונים המוצגים באתר מעודכנים לשנת 2026 וכפופים לשינויים
             בהתאם להוראות הדין. שכר הטרחה נגבה על בסיס הצלחה בלבד, בכפוף ובהתאם למגבלות שכר הטרחה הקבועות בחוק.
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-navy-foreground/60">
-            <span>© {new Date().getFullYear()} מגן זכויות בע&quot;מ. כל הזכויות שמורות.</span>
+            <span>© {new Date().getFullYear()} מגן זכות בע&quot;מ. כל הזכויות שמורות.</span>
             <span aria-hidden="true">·</span>
             <Link
               href="/accessibility"

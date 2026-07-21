@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
-import { Accessibility, Mail, MessageCircle, Phone } from 'lucide-react'
+import { Mail, MessageCircle, Phone } from 'lucide-react'
+import { AccessibilityIcon } from '@/components/accessibility-icon'
 
 export const metadata: Metadata = {
   title: 'הצהרת נגישות',
   description:
-    'הצהרת הנגישות של אתר מגן זכויות: התאמות הנגישות באתר, אמצעי הסיוע הזמינים ופרטי הקשר לפניות בנושא נגישות.',
+    'הצהרת הנגישות של אתר מגן זכות: התאמות הנגישות באתר, אמצעי הסיוע הזמינים ופרטי הקשר לפניות בנושא נגישות.',
   robots: { index: true, follow: true },
 }
 
@@ -24,14 +25,14 @@ export default function AccessibilityPage() {
       <section className="bg-navy text-navy-foreground">
         <div className="mx-auto flex max-w-4xl flex-col gap-5 px-4 py-14 md:py-20 lg:px-8">
           <p className="anim-fade-up flex w-fit items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-sm font-medium text-gold">
-            <Accessibility className="h-4 w-4" aria-hidden="true" />
+            <AccessibilityIcon className="h-4 w-4" aria-hidden="true" />
             נגישות לכולם
           </p>
           <h1 className="anim-fade-up font-serif text-3xl leading-tight [animation-delay:100ms] md:text-5xl">
             הצהרת נגישות
           </h1>
           <p className="anim-fade-up max-w-2xl text-lg leading-relaxed text-navy-foreground/85 [animation-delay:200ms]">
-            אתר מגן זכויות נועד לשרת בדיוק את מי שזקוק לנגישות יותר מכולם — אנשים המתמודדים
+            אתר מגן זכות נועד לשרת בדיוק את מי שזקוק לנגישות יותר מכולם — אנשים המתמודדים
             עם מצבים רפואיים ומוגבלויות. לכן הנגישות אצלנו היא לא סעיף בחוק, אלא לב השירות.
           </p>
         </div>

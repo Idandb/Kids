@@ -13,7 +13,7 @@ export function WhatsAppFab() {
       href={WA_URL}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="פתיחת שיחת וואטסאפ עם מגן זכויות"
+      aria-label="פתיחת שיחת וואטסאפ עם מגן זכות"
       onClick={() => trackConversion('whatsapp_click', { source: 'fab' })}
       className="anim-scale-in fixed bottom-4 left-4 z-[70] hidden h-13 w-13 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform duration-200 [animation-delay:800ms] hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366] lg:flex"
     >

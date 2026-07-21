@@ -23,7 +23,7 @@ const secular = Heebo({
   variable: '--font-secular',
 })
 
-const defaultTitle = 'מגן זכויות | מיצוי זכויות לילד נכה — קצבת ביטוח לאומי והפרעות קשב וריכוז'
+const defaultTitle = 'מגן זכות | מיצוי זכויות לילד נכה — קצבת ביטוח לאומי והפרעות קשב וריכוז'
 const defaultDescription =
   'מיצוי זכויות מלא להורים לילדים עם מוגבלות: קצבת ילד נכה מביטוח לאומי, הפרעות קשב וריכוז (ADHD), אוטיזם, תסמונת דאון ועוד. הטבות נלוות (חשמל, מים, ארנונה, נקודות זיכוי במס), ליווי לוועדות וערעורים. בדיקת זכאות חינם — תשלום על בסיס הצלחה בלבד.'
 
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: defaultTitle,
-    template: '%s | מגן זכויות',
+    template: '%s | מגן זכות',
   },
   description: defaultDescription,
   keywords: [
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'he_IL',
     url: SITE_URL,
-    siteName: 'מגן זכויות',
+    siteName: 'מגן זכות',
     title: defaultTitle,
     description: defaultDescription,
     images: [{ url: '/images/logo.png', width: 704, height: 333, alt: 'מגן זכות — מיצוי זכויות לילד נכה' }],
@@ -80,7 +80,7 @@ export const viewport: Viewport = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: 'מגן זכויות',
+  name: 'מגן זכות',
   description: defaultDescription,
   url: SITE_URL,
   logo: `${SITE_URL}/images/logo.png`,
