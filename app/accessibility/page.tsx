@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
-import { Mail, MessageCircle, Phone } from 'lucide-react'
-import { AccessibilityIcon } from '@/components/accessibility-icon'
+import { Mail, MessageCircle, PersonStanding, Phone } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'הצהרת נגישות',
@@ -25,7 +24,7 @@ export default function AccessibilityPage() {
       <section className="bg-navy text-navy-foreground">
         <div className="mx-auto flex max-w-4xl flex-col gap-5 px-4 py-14 md:py-20 lg:px-8">
           <p className="anim-fade-up flex w-fit items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-sm font-medium text-gold">
-            <AccessibilityIcon className="h-4 w-4" aria-hidden="true" />
+            <PersonStanding className="h-4 w-4" aria-hidden="true" />
             נגישות לכולם
           </p>
           <h1 className="anim-fade-up font-serif text-3xl leading-tight [animation-delay:100ms] md:text-5xl">
