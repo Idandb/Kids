@@ -48,7 +48,7 @@ export function Process() {
             {steps.map((step, i) => (
               <li key={step.num} className="h-full">
                 <Reveal delay={i * 110} className="h-full">
-                  <div className="card-lift relative flex h-full flex-col gap-4 rounded-2xl bg-card p-7 shadow-soft">
+                  <div className="card-lift relative flex h-full flex-col gap-4 rounded-2xl bg-card p-7 shadow-elevated">
                     <span
                       className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-gold to-gold/70 font-serif text-xl text-navy shadow-lg shadow-gold/25"
                       aria-hidden="true"

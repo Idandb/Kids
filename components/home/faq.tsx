@@ -41,7 +41,11 @@ const faqSchema = {
 
 export function Faq() {
   return (
-    <section className="mx-auto max-w-4xl px-4 py-20 md:py-28 lg:px-8">
+    <section className="relative mx-auto max-w-4xl overflow-hidden px-4 py-20 md:py-28 lg:px-8">
+      <div
+        className="pointer-events-none absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-primary/5 blur-[140px]"
+        aria-hidden="true"
+      />
       <JsonLd data={faqSchema} />
       <Reveal className="mx-auto mb-12 flex max-w-2xl flex-col items-center gap-4 text-center">
         <p className="kicker">שאלות נפוצות</p>

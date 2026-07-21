@@ -64,7 +64,7 @@ const tracks = [
 
 export function PremiumTracks() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-20 md:py-28 lg:px-8">
+    <section className="bg-wash mx-auto max-w-7xl px-4 py-20 md:py-28 lg:px-8">
       <Reveal className="mx-auto mb-12 flex max-w-2xl flex-col items-center gap-4 text-center">
         <p className="kicker">עילות הזכאות שלנו</p>
         <h2 className="font-serif text-3xl leading-tight text-balance md:text-4xl">
@@ -77,11 +77,17 @@ export function PremiumTracks() {
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {tracks.map((track, i) => (
-          <Reveal key={track.href} delay={i * 60} className="h-full">
+          <Reveal
+            key={track.href}
+            delay={i * 60}
+            className={track.featured ? 'h-full sm:col-span-2 lg:col-span-2' : 'h-full'}
+          >
             <Link
               href={track.href}
-              className={`card-lift group relative flex h-full flex-col gap-4 rounded-2xl border bg-card p-7 shadow-soft hover:border-gold/50 ${
-                track.featured ? 'border-gold/50 ring-1 ring-gold/20' : 'border-border'
+              className={`card-lift group relative flex h-full gap-4 rounded-2xl border bg-card p-7 shadow-soft hover:border-gold/50 ${
+                track.featured
+                  ? 'flex-col border-gold/40 bg-gradient-to-br from-gold/10 to-card shadow-elevated ring-1 ring-gold/20 lg:flex-row lg:items-center lg:gap-8'
+                  : 'flex-col border-border'
               }`}
             >
               {track.featured && (
@@ -89,21 +95,35 @@ export function PremiumTracks() {
                   הכי מבוקש
                 </span>
               )}
-              <span className="flex h-13 w-13 items-center justify-center rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 ring-1 ring-gold/20">
-                <track.icon className="h-7 w-7 text-gold" aria-hidden="true" />
-              </span>
-              <h3 className="font-serif text-xl leading-snug transition-colors group-hover:text-accent">
-                {track.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{track.text}</p>
-              <p className="mt-auto border-t border-border pt-4 text-sm font-bold text-gold">{track.stat}</p>
-              <span className="flex items-center gap-1.5 text-sm font-semibold text-foreground">
-                לפרטים ובדיקת זכאות
-                <ArrowLeft
-                  className="h-4 w-4 text-gold transition-transform duration-300 group-hover:-translate-x-1"
-                  aria-hidden="true"
-                />
-              </span>
+              <div className={track.featured ? 'flex flex-1 flex-col gap-4' : 'contents'}>
+                <span
+                  className={`flex items-center justify-center rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 ring-1 ring-gold/20 ${
+                    track.featured ? 'h-16 w-16' : 'h-13 w-13'
+                  }`}
+                >
+                  <track.icon className={track.featured ? 'h-8 w-8 text-gold' : 'h-7 w-7 text-gold'} aria-hidden="true" />
+                </span>
+                <h3 className="font-serif text-xl leading-snug transition-colors group-hover:text-accent">
+                  {track.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{track.text}</p>
+              </div>
+              <div className={track.featured ? 'flex flex-col gap-3' : 'contents'}>
+                <p
+                  className={`text-sm font-bold text-gold ${
+                    track.featured ? 'border-t border-border pt-4 lg:border-t-0 lg:pt-0' : 'mt-auto border-t border-border pt-4'
+                  }`}
+                >
+                  {track.stat}
+                </p>
+                <span className="flex items-center gap-1.5 text-sm font-semibold text-foreground">
+                  לפרטים ובדיקת זכאות
+                  <ArrowLeft
+                    className="h-4 w-4 text-gold transition-transform duration-300 group-hover:-translate-x-1"
+                    aria-hidden="true"
+                  />
+                </span>
+              </div>
             </Link>
           </Reveal>
         ))}

@@ -41,9 +41,9 @@ export function HiddenBenefits() {
         <div className="grid gap-5 md:grid-cols-2">
           {big.map((item, i) => (
             <Reveal key={item.title} delay={i * 90} className="h-full">
-              <div className="card-lift flex h-full flex-col gap-3 rounded-2xl border border-border bg-card p-7 shadow-soft hover:border-gold/40">
-                <span className="flex h-13 w-13 items-center justify-center rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 ring-1 ring-gold/20">
-                  <item.icon className="h-7 w-7 text-gold" aria-hidden="true" />
+              <div className="card-lift flex h-full flex-col gap-3 rounded-2xl border border-gold/25 bg-gradient-to-br from-gold/10 to-card p-7 shadow-elevated">
+                <span className="flex h-13 w-13 items-center justify-center rounded-full bg-gold shadow-md shadow-gold/25">
+                  <item.icon className="h-7 w-7 text-gold-foreground" aria-hidden="true" />
                 </span>
                 <h3 className="font-serif text-xl">{item.title}</h3>
                 <p className="text-sm font-bold text-gold">{item.stat}</p>

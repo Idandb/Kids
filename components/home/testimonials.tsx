@@ -33,9 +33,9 @@ export function Testimonials() {
         <div className="grid gap-6 lg:grid-cols-3">
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 110} className="h-full">
-              <figure className="card-lift flex h-full flex-col gap-4 rounded-2xl border border-transparent bg-card p-7 shadow-soft hover:border-gold/30">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-gold/20 to-gold/5 ring-1 ring-gold/20">
-                  <Quote className="h-6 w-6 text-gold" aria-hidden="true" />
+              <figure className="card-lift flex h-full flex-col gap-4 rounded-3xl bg-card p-7 shadow-elevated">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold shadow-md shadow-gold/25">
+                  <Quote className="h-6 w-6 text-gold-foreground" aria-hidden="true" />
                 </span>
                 <div className="flex gap-0.5" aria-label="דירוג 5 כוכבים">
                   {Array.from({ length: 5 }).map((_, j) => (

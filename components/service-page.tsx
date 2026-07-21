@@ -89,7 +89,7 @@ export function ServiceHero({
 
 export function StatCard({ value, label }: { value: string; label: string }) {
   return (
-    <div className="card-lift glass flex h-full flex-col gap-2 rounded-2xl border border-border p-6 text-center shadow-soft hover:border-gold/40">
+    <div className="card-lift glass flex h-full flex-col gap-2 rounded-2xl border border-border p-6 text-center shadow-elevated hover:border-gold/40">
       <span className="mx-auto h-1 w-10 rounded-full bg-gradient-to-l from-gold to-gold/30" aria-hidden="true" />
       <p className="font-serif text-3xl text-gold md:text-4xl">
         <CountUp text={value} />

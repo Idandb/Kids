@@ -34,7 +34,11 @@ const tiers = [
 
 export function BenefitTiers() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-20 md:py-28 lg:px-8">
+    <section className="relative mx-auto max-w-7xl overflow-hidden px-4 py-20 md:py-28 lg:px-8">
+      <div
+        className="pointer-events-none absolute -top-24 -left-24 h-80 w-80 rounded-full bg-gold/8 blur-[130px]"
+        aria-hidden="true"
+      />
       <Reveal className="mx-auto mb-12 flex max-w-2xl flex-col items-center gap-4 text-center">
         <p className="kicker">סכומי הקצבה ל-2026</p>
         <h2 className="font-serif text-3xl leading-tight text-balance md:text-4xl">
@@ -49,8 +53,10 @@ export function BenefitTiers() {
         {tiers.map((tier, i) => (
           <Reveal key={tier.pct} delay={i * 70} className="h-full">
             <div
-              className={`card-lift relative flex h-full flex-col items-center gap-3 rounded-2xl border bg-card p-6 text-center shadow-soft hover:border-gold/50 ${
-                tier.featured ? 'border-gold/50 ring-1 ring-gold/25' : 'border-border'
+              className={`card-lift relative flex h-full flex-col items-center gap-3 rounded-2xl p-6 text-center ${
+                tier.featured
+                  ? 'border border-gold/40 bg-gradient-to-b from-gold/12 to-card shadow-elevated ring-1 ring-gold/20 lg:-translate-y-2'
+                  : 'border border-border bg-card shadow-soft hover:border-gold/50'
               }`}
             >
               {tier.featured && (

@@ -88,7 +88,7 @@
   h2,
   h3,
   h4 {
-    @apply font-serif;
+    @apply font-serif tracking-tight;
     font-weight: 800;
   }
   p {
@@ -247,15 +247,15 @@
   position: relative;
   z-index: 0;
   overflow: hidden;
-  background-image: linear-gradient(to bottom, oklch(0.62 0.13 165), oklch(0.52 0.12 160));
+  background-image: linear-gradient(to bottom, oklch(0.64 0.155 166), oklch(0.5 0.135 159));
   box-shadow:
-    inset 0 1px 0 oklch(1 0 0 / 0.22),
-    0 10px 28px -10px oklch(0.56 0.125 163 / 0.5);
+    inset 0 1px 0 oklch(1 0 0 / 0.28),
+    0 12px 32px -10px oklch(0.56 0.125 163 / 0.55);
 }
 .btn-gold:hover {
   box-shadow:
-    inset 0 1px 0 oklch(1 0 0 / 0.22),
-    0 16px 36px -12px oklch(0.56 0.125 163 / 0.6);
+    inset 0 1px 0 oklch(1 0 0 / 0.28),
+    0 18px 40px -12px oklch(0.56 0.125 163 / 0.65);
 }
 /* Slow periodic light sheen sweeping across the primary CTA */
 .btn-gold::after {
@@ -284,6 +284,13 @@
     0 14px 34px -18px oklch(0.22 0.02 260 / 0.14);
 }
 
+/* Heavier, borderless "floating panel" shadow */
+.shadow-elevated {
+  box-shadow:
+    0 2px 8px oklch(0.22 0.02 260 / 0.06),
+    0 32px 64px -24px oklch(0.22 0.02 260 / 0.28);
+}
+
 /* Subtle dot texture for dark bands */
 .bg-dots {
   background-image: radial-gradient(oklch(0.97 0.003 250 / 0.08) 1px, transparent 1.5px);
@@ -296,6 +303,11 @@
     linear-gradient(to left, oklch(0.22 0.02 260 / 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, oklch(0.22 0.02 260 / 0.05) 1px, transparent 1px);
   background-size: 44px 44px;
+}
+
+/* Soft top-anchored emerald wash for otherwise-flat light sections */
+.bg-wash {
+  background-image: radial-gradient(120% 90% at 50% 0%, oklch(0.56 0.125 163 / 0.05), transparent 62%);
 }
 
 /* Emerald gradient text for headline accents (keeps historical class name) */

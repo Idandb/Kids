@@ -1,6 +1,7 @@
 import { Phone, ShieldCheck, Scale, Stethoscope } from 'lucide-react'
 import { LeadForm } from '@/components/lead-form'
 import { CountUp } from '@/components/count-up'
+import { EligibilityMockup } from '@/components/home/eligibility-mockup'
 
 export function Hero() {
   return (
@@ -85,8 +86,11 @@ export function Hero() {
           </div>
         </div>
 
-        <div id="lead-form" className="anim-scale-in scroll-mt-24 [animation-delay:250ms]">
-          <LeadForm title="גלו תוך 24 שעות כמה כסף מגיע לילד שלכם" />
+        <div id="lead-form" className="relative scroll-mt-24">
+          <EligibilityMockup />
+          <div className="anim-scale-in relative z-10 [animation-delay:250ms]">
+            <LeadForm title="גלו תוך 24 שעות כמה כסף מגיע לילד שלכם" />
+          </div>
         </div>
       </div>
     </section>

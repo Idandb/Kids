@@ -69,7 +69,7 @@ export function Minefield() {
           {risks.map((risk, i) => (
             <Reveal key={risk.title} delay={i * 90} className="h-full">
               <article className="card-lift flex h-full flex-col gap-3 rounded-2xl border border-border bg-card p-6 shadow-soft hover:border-gold/40">
-                <span className="flex h-13 w-13 items-center justify-center rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 ring-1 ring-gold/25">
+                <span className="flex h-13 w-13 items-center justify-center rounded-full border-2 border-gold/35 bg-transparent">
                   <risk.icon className="h-7 w-7 text-gold" aria-hidden="true" />
                 </span>
                 <h3 className="font-serif text-lg leading-snug">{risk.title}</h3>
