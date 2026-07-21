@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="shield" x1="256" y1="40" x2="256" y2="472" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2FBE8F"/>
+      <stop offset="1" stop-color="#0B7A55"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="256" y1="48" x2="256" y2="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Shield body (thick same-color stroke rounds the corners) -->
+  <path
+    d="M256 64 L416 122 V270 C416 366 344 430 256 452 C168 430 96 366 96 270 V122 Z"
+    fill="url(#shield)"
+    stroke="url(#shield)"
+    stroke-width="32"
+    stroke-linejoin="round"
+  />
+
+  <!-- Top gloss -->
+  <path
+    d="M256 52 L428 114 V240 C428 252 424 262 416 264 L96 264 C88 262 84 252 84 240 V114 Z"
+    fill="url(#gloss)"
+    opacity="0.9"
+  />
+
+  <!-- Inner keyline -->
+  <path
+    d="M256 96 L388 144 V268 C388 348 328 402 256 422 C184 402 124 348 124 268 V144 Z"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-opacity="0.18"
+    stroke-width="10"
+    stroke-linejoin="round"
+  />
+
+  <!-- Checkmark -->
+  <path
+    d="M178 262 L238 322 L346 192"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="46"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

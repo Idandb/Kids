@@ -1,0 +1,375 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-assistant), 'Assistant', sans-serif;
+  --font-serif: var(--font-secular), 'Heebo', sans-serif;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-navy: var(--navy);
+  --color-navy-foreground: var(--navy-foreground);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: light;
+  /* Crisp near-white canvas */
+  --background: oklch(0.99 0.002 250);
+  --foreground: oklch(0.22 0.02 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.02 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.02 260);
+  /* Ink primary */
+  --primary: oklch(0.24 0.02 260);
+  --primary-foreground: oklch(0.98 0.002 250);
+  --secondary: oklch(0.958 0.004 250);
+  --secondary-foreground: oklch(0.24 0.02 260);
+  --muted: oklch(0.958 0.004 250);
+  /* Darkened for readability (WCAG contrast on light backgrounds) */
+  --muted-foreground: oklch(0.4 0.015 260);
+  /* Emerald accent (keeps the historical --gold variable name) */
+  --accent: oklch(0.56 0.125 163);
+  --accent-foreground: oklch(0.99 0 0);
+  --gold: oklch(0.56 0.125 163);
+  --gold-foreground: oklch(0.99 0 0);
+  /* Deep ink replaces navy for dark bands (keeps the --navy variable name) */
+  --navy: oklch(0.21 0.02 260);
+  --navy-foreground: oklch(0.97 0.003 250);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.905 0.005 250);
+  --input: oklch(0.905 0.005 250);
+  --ring: oklch(0.56 0.125 163);
+  --radius: 0.65rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    /* Larger base size for comfortable Hebrew reading */
+    font-size: 17px;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    line-height: 1.7;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif;
+    font-weight: 800;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: oklch(0.56 0.125 163 / 0.25);
+    color: oklch(0.22 0.02 260);
+  }
+}
+
+/* ---------------------------------- */
+/* Motion system                      */
+/* ---------------------------------- */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -20px, 0);
+  }
+}
+
+/* Entrance animations (run on page load, above the fold) */
+.anim-fade-up {
+  animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.anim-fade-in {
+  animation: fade-in 0.9s ease-out both;
+}
+.anim-scale-in {
+  animation: scale-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.anim-float {
+  animation: float-slow 9s ease-in-out infinite;
+}
+
+/* Scroll-triggered reveal (driven by components/reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Card hover lift */
+.card-lift {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px -20px oklch(0.22 0.02 260 / 0.25);
+}
+/* Cursor-tracking spotlight glow (position set via --spot-x/--spot-y by components/spotlight-cards.tsx) */
+.card-lift::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(480px circle at var(--spot-x, 50%) var(--spot-y, 50%), oklch(0.56 0.125 163 / 0.14), transparent 42%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+@media (hover: hover) {
+  .card-lift:hover::before {
+    opacity: 1;
+  }
+}
+
+/* Unified section kicker badge */
+.kicker {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid oklch(0.56 0.125 163 / 0.3);
+  background: oklch(0.56 0.125 163 / 0.08);
+  padding: 0.375rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: oklch(0.44 0.11 163);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Frosted-glass surfaces: pair with the component's own border/shadow utilities.
+   Only used where there's real texture behind them (grids, blobs, gradients) —
+   glass over a flat solid background just reads as reduced opacity. */
+.glass {
+  background: oklch(1 0 0 / 0.6);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+}
+.glass-dark {
+  background: oklch(1 0 0 / 0.06);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+}
+.kicker::before {
+  content: '';
+  height: 6px;
+  width: 6px;
+  border-radius: 9999px;
+  background: oklch(0.56 0.125 163);
+}
+
+/* Emerald primary button: subtle vertical gradient + inner highlight */
+.btn-gold {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, oklch(0.62 0.13 165), oklch(0.52 0.12 160));
+  box-shadow:
+    inset 0 1px 0 oklch(1 0 0 / 0.22),
+    0 10px 28px -10px oklch(0.56 0.125 163 / 0.5);
+}
+.btn-gold:hover {
+  box-shadow:
+    inset 0 1px 0 oklch(1 0 0 / 0.22),
+    0 16px 36px -12px oklch(0.56 0.125 163 / 0.6);
+}
+/* Slow periodic light sheen sweeping across the primary CTA */
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(115deg, transparent 35%, oklch(1 0 0 / 0.4) 48%, transparent 62%);
+  transform: translateX(-140%);
+  animation: btn-sheen 3.6s ease-in-out infinite;
+}
+@keyframes btn-sheen {
+  0%,
+  55% {
+    transform: translateX(-140%);
+  }
+  100% {
+    transform: translateX(140%);
+  }
+}
+
+/* Softer, deeper card shadow */
+.shadow-soft {
+  box-shadow:
+    0 1px 2px oklch(0.22 0.02 260 / 0.05),
+    0 14px 34px -18px oklch(0.22 0.02 260 / 0.14);
+}
+
+/* Subtle dot texture for dark bands */
+.bg-dots {
+  background-image: radial-gradient(oklch(0.97 0.003 250 / 0.08) 1px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+/* Fine graph-paper grid for light bands */
+.bg-grid {
+  background-image:
+    linear-gradient(to left, oklch(0.22 0.02 260 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.22 0.02 260 / 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Emerald gradient text for headline accents (keeps historical class name) */
+.gold-gradient-text {
+  background: linear-gradient(115deg, oklch(0.66 0.14 170), oklch(0.56 0.13 163) 45%, oklch(0.46 0.12 155));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------------------------------- */
+/* Accessibility widget modes          */
+/* (classes toggled on <html> by       */
+/* components/accessibility-widget)    */
+/* ---------------------------------- */
+
+html.acc-text-lg {
+  font-size: 112.5%;
+}
+html.acc-text-xl {
+  font-size: 125%;
+}
+/* Filters go on header/main/footer (not body) so the fixed widget
+   button keeps its viewport positioning. */
+html.acc-grayscale :is(header, main, footer) {
+  filter: grayscale(1);
+}
+html.acc-contrast :is(header, main, footer) {
+  filter: contrast(1.25) saturate(1.1);
+}
+html.acc-grayscale.acc-contrast :is(header, main, footer) {
+  filter: grayscale(1) contrast(1.25);
+}
+html.acc-links a {
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}
+html.acc-no-motion {
+  scroll-behavior: auto;
+}
+html.acc-no-motion *,
+html.acc-no-motion *::before,
+html.acc-no-motion *::after {
+  animation: none !important;
+  transition: none !important;
+}
+html.acc-no-motion .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+html.acc-no-motion .card-lift::before,
+html.acc-no-motion .btn-gold::after {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .anim-fade-up,
+  .anim-fade-in,
+  .anim-scale-in,
+  .anim-float,
+  .reveal {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .card-lift:hover {
+    transform: none;
+  }
+  .card-lift::before,
+  .btn-gold::after {
+    display: none !important;
+  }
+}
