@@ -8,6 +8,8 @@ import { WhatsAppFab } from '@/components/whatsapp-fab'
 import { MobileCtaBar } from '@/components/mobile-cta-bar'
 import { GoogleTag } from '@/components/google-tag'
 import { SpotlightCards } from '@/components/spotlight-cards'
+import { MagneticButtons } from '@/components/magnetic-buttons'
+import { ScrollProgress } from '@/components/scroll-progress'
 import { JsonLd } from '@/components/json-ld'
 import './globals.css'
 
@@ -115,6 +117,7 @@ export default function RootLayout({
           <style>{`.reveal{opacity:1 !important;transform:none !important}`}</style>
         </noscript>
         <JsonLd data={organizationSchema} />
+        <ScrollProgress />
         <SiteHeader />
         {children}
         <SiteFooter />
@@ -122,6 +125,7 @@ export default function RootLayout({
         <WhatsAppFab />
         <MobileCtaBar />
         <SpotlightCards />
+        <MagneticButtons />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

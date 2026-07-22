@@ -6,6 +6,7 @@ import { ArrowRight, CheckCircle2, Send } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { trackConversion } from '@/lib/track'
 import { WhatsAppIcon } from '@/components/whatsapp-icon'
+import { SuccessConfetti } from '@/components/success-confetti'
 
 const WHATSAPP_PHONE = '972535455667'
 const LEADS_ENDPOINT = 'https://formsubmit.co/ajax/idanddbb@gmail.com'
@@ -109,11 +110,12 @@ export function LeadForm({
     return (
       <div
         className={cn(
-          'anim-scale-in flex flex-col items-center gap-3 rounded-2xl p-8 text-center',
+          'anim-scale-in relative flex flex-col items-center gap-3 overflow-hidden rounded-2xl p-8 text-center',
           dark ? 'glass-dark text-navy-foreground' : 'glass shadow-lg',
         )}
         role="status"
       >
+        {result.sent && <SuccessConfetti />}
         <span className="anim-scale-in flex h-16 w-16 items-center justify-center rounded-full bg-gold/15 ring-1 ring-gold/30 [animation-delay:120ms]">
           <CheckCircle2 className="h-9 w-9 text-gold" aria-hidden="true" />
         </span>

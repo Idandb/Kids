@@ -17,6 +17,11 @@ export function Hero() {
         className="anim-float absolute -bottom-48 right-1/4 h-96 w-96 rounded-full bg-gold/8 blur-[130px] [animation-delay:2s]"
         aria-hidden="true"
       />
+      <Scale
+        className="anim-float pointer-events-none absolute -left-16 top-1/4 hidden h-[26rem] w-[26rem] text-gold opacity-[0.05] [animation-delay:1s] lg:block"
+        strokeWidth={0.5}
+        aria-hidden="true"
+      />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 pt-10 pb-16 md:pt-14 md:pb-24 lg:grid-cols-[1.2fr_1fr] lg:px-8">
         <div className="flex flex-col gap-6">
@@ -41,7 +46,7 @@ export function Hero() {
           <div className="anim-fade-up flex flex-wrap items-center gap-4 [animation-delay:300ms]">
             <a
               href="tel:0535455667"
-              className="btn-gold flex items-center gap-3 rounded-full px-7 py-4 text-lg font-bold text-gold-foreground transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
+              className="btn-gold magnetic flex items-center gap-3 rounded-full px-7 py-4 text-lg font-bold text-gold-foreground transition-shadow duration-300"
             >
               <Phone className="h-5 w-5" aria-hidden="true" />
               <span>חייגו עכשיו: <span dir="ltr">053-5455667</span></span>
