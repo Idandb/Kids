@@ -53,7 +53,7 @@ export function Hero() {
             </a>
             <a
               href="#lead-form"
-              className="flex items-center gap-2 rounded-full border-2 border-foreground/15 px-6 py-3.5 text-base font-bold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:text-accent active:translate-y-0"
+              className="cta-press flex items-center gap-2 rounded-full border-2 border-foreground/15 px-6 py-3.5 text-base font-bold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:text-accent active:translate-y-0"
             >
               בדיקת זכאות חינם
             </a>

@@ -28,9 +28,9 @@ export function AgeMilestones() {
           className="absolute top-8 hidden h-px w-full bg-gradient-to-l from-transparent via-gold/40 to-transparent lg:block"
           aria-hidden="true"
         />
-        <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
+        <ol className="-mx-4 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-3 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-6">
           {milestones.map((m, i) => (
-            <li key={m.age} className="h-full">
+            <li key={m.age} className="h-full w-[70%] shrink-0 snap-center sm:w-auto sm:shrink">
               <Reveal delay={i * 90} className="flex h-full flex-col items-center gap-3 text-center">
                 <span
                   className="relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold to-gold/70 text-center font-serif text-sm leading-tight text-navy shadow-lg shadow-gold/25"

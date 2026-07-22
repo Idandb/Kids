@@ -160,6 +160,29 @@
   animation: float-slow 9s ease-in-out infinite;
 }
 
+/* Progressive enhancement: where scroll-driven animations are supported,
+   let decorative orbs drift with scroll position instead of only time.
+   Browsers without support simply keep the anim-float loop above. */
+@keyframes orb-scroll-drift {
+  from {
+    transform: translate3d(0, -34px, 0);
+  }
+  to {
+    transform: translate3d(0, 34px, 0);
+  }
+}
+@supports (animation-timeline: view()) {
+  .anim-float {
+    animation-name: orb-scroll-drift;
+    animation-duration: auto;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 100%;
+  }
+}
+
 /* Scroll-triggered reveal (driven by components/reveal.tsx) */
 .reveal {
   opacity: 0;
@@ -202,6 +225,23 @@
 @media (hover: hover) {
   .card-lift:hover::before {
     opacity: 1;
+  }
+}
+/* Touch devices: no hover, so give cards their own tactile feedback instead */
+@media (hover: none) {
+  .card-lift {
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+  .card-lift:active {
+    transform: scale(0.98);
+    box-shadow: 0 8px 20px -12px oklch(0.22 0.02 260 / 0.2);
+  }
+  /* One-shot tap ripple, triggered by toggling .spot-pulse (see components/spotlight-cards.tsx) */
+  .card-lift.spot-pulse::before {
+    opacity: 1;
+    transition: opacity 0.6s ease;
   }
 }
 
@@ -325,6 +365,18 @@
   will-change: transform;
 }
 
+/* Touch press-feedback for primary CTAs (no magnetic pull without a cursor) */
+@media (hover: none) {
+  .btn-gold:active,
+  .cta-press:active {
+    transform: scale(0.96);
+  }
+  .btn-gold,
+  .cta-press {
+    transition: transform 0.12s ease;
+  }
+}
+
 /* One-shot success-state confetti (components/success-confetti.tsx) */
 @keyframes confetti-fall {
   0% {
@@ -392,6 +444,11 @@ html.acc-no-motion .card-lift::before,
 html.acc-no-motion .btn-gold::after {
   display: none !important;
 }
+html.acc-no-motion .card-lift:active,
+html.acc-no-motion .btn-gold:active,
+html.acc-no-motion .cta-press:active {
+  transform: none !important;
+}
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -407,7 +464,10 @@ html.acc-no-motion .btn-gold::after {
     opacity: 1 !important;
     transform: none !important;
   }
-  .card-lift:hover {
+  .card-lift:hover,
+  .card-lift:active,
+  .btn-gold:active,
+  .cta-press:active {
     transform: none;
   }
   .card-lift::before,

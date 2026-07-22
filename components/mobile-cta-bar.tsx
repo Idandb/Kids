@@ -17,8 +17,11 @@ export function MobileCtaBar() {
     >
       <a
         href="tel:0535455667"
-        onClick={() => trackConversion('phone_click', { source: 'mobile_bar' })}
-        className="flex flex-1 items-center justify-center gap-2 bg-primary py-3.5 text-sm font-bold text-primary-foreground active:opacity-90"
+        onClick={() => {
+          navigator.vibrate?.(10)
+          trackConversion('phone_click', { source: 'mobile_bar' })
+        }}
+        className="cta-press flex flex-1 items-center justify-center gap-2 bg-primary py-3.5 text-sm font-bold text-primary-foreground active:opacity-90"
       >
         <Phone className="h-4 w-4" aria-hidden="true" />
         חייגו עכשיו
@@ -27,8 +30,11 @@ export function MobileCtaBar() {
         href={WA_URL}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={() => trackConversion('whatsapp_click', { source: 'mobile_bar' })}
-        className="flex flex-1 items-center justify-center gap-2 bg-[#25D366] py-3.5 text-sm font-bold text-white active:opacity-90"
+        onClick={() => {
+          navigator.vibrate?.(10)
+          trackConversion('whatsapp_click', { source: 'mobile_bar' })
+        }}
+        className="cta-press flex flex-1 items-center justify-center gap-2 bg-[#25D366] py-3.5 text-sm font-bold text-white active:opacity-90"
       >
         <WhatsAppIcon className="h-4 w-4" />
         וואטסאפ
