@@ -48,8 +48,8 @@ export function Minefield() {
           </p>
           <div className="group relative aspect-[16/10] overflow-hidden rounded-2xl shadow-elevated">
             <Image
-              src="/images/consultation.png"
-              alt="מומחה מלווה הורים בתהליך מיצוי הזכויות לילד"
+              src="/images/consultation.AVIF"
+              alt="הורים וילדה בבית — מייצגים את המשפחות שאנחנו מלווים בתהליך מיצוי הזכויות"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
