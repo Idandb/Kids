@@ -1,5 +1,6 @@
 import { Quote, Star } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
+import { ScrollRailDots } from '@/components/scroll-rail-dots'
 
 const testimonials = [
   {
@@ -30,7 +31,10 @@ export function Testimonials() {
           </h2>
         </Reveal>
 
-        <div className="-mx-4 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-3 lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:px-0 lg:pb-0">
+        <div
+          id="testimonials-rail"
+          className="rail-fade-lg -mx-4 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-3 lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:px-0 lg:pb-0"
+        >
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 110} className="h-full w-[85%] shrink-0 snap-center lg:w-auto lg:shrink">
               <figure className="card-lift flex h-full flex-col gap-4 rounded-3xl bg-card p-7 shadow-elevated">
@@ -51,6 +55,7 @@ export function Testimonials() {
             </Reveal>
           ))}
         </div>
+        <ScrollRailDots railId="testimonials-rail" count={testimonials.length} />
       </div>
     </section>
   )

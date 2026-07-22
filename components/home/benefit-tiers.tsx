@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 import { CountUp } from '@/components/count-up'
+import { ScrollRailDots } from '@/components/scroll-rail-dots'
 
 const tiers = [
   {
@@ -49,7 +50,10 @@ export function BenefitTiers() {
         </p>
       </Reveal>
 
-      <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-3 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-5">
+      <div
+        id="tiers-rail"
+        className="rail-fade -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pt-6 pb-3 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-5 sm:overflow-visible sm:px-0 sm:pt-0 sm:pb-0 lg:grid-cols-5"
+      >
         {tiers.map((tier, i) => (
           <Reveal
             key={tier.pct}
@@ -78,6 +82,7 @@ export function BenefitTiers() {
           </Reveal>
         ))}
       </div>
+      <ScrollRailDots railId="tiers-rail" count={tiers.length} />
 
       <Reveal delay={350} className="mt-8 flex justify-center">
         <Link

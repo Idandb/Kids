@@ -392,6 +392,28 @@
   animation: confetti-fall 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/* Horizontal swipe rail (mobile-only card carousels): soft edge fade hints
+   there's more content off-screen. Resets above the sm breakpoint, where
+   these sections switch back to a static grid. */
+.rail-fade,
+.rail-fade-lg {
+  mask-image: linear-gradient(to right, transparent, black 20px, black calc(100% - 20px), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20px, black calc(100% - 20px), transparent);
+}
+/* Resets once each rail's own breakpoint switches it back to a static grid */
+@media (min-width: 640px) {
+  .rail-fade {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}
+@media (min-width: 1024px) {
+  .rail-fade-lg {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}
+
 /* Emerald gradient text for headline accents (keeps historical class name) */
 .gold-gradient-text {
   background: linear-gradient(115deg, oklch(0.66 0.14 170), oklch(0.56 0.13 163) 45%, oklch(0.46 0.12 155));

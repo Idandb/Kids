@@ -1,5 +1,6 @@
 import { Reveal } from '@/components/reveal'
 import { CountUp } from '@/components/count-up'
+import { ScrollRailDots } from '@/components/scroll-rail-dots'
 
 const milestones = [
   { age: '91 יום', text: 'תחילת הזכאות ברוב העילות. דאון, שמיעה וראייה — כבר מלידה.' },
@@ -28,7 +29,10 @@ export function AgeMilestones() {
           className="absolute top-8 hidden h-px w-full bg-gradient-to-l from-transparent via-gold/40 to-transparent lg:block"
           aria-hidden="true"
         />
-        <ol className="-mx-4 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-3 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-6">
+        <ol
+          id="milestones-rail"
+          className="rail-fade -mx-4 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-3 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-6"
+        >
           {milestones.map((m, i) => (
             <li key={m.age} className="h-full w-[70%] shrink-0 snap-center sm:w-auto sm:shrink">
               <Reveal delay={i * 90} className="flex h-full flex-col items-center gap-3 text-center">
@@ -43,6 +47,7 @@ export function AgeMilestones() {
             </li>
           ))}
         </ol>
+        <ScrollRailDots railId="milestones-rail" count={milestones.length} />
       </div>
     </section>
   )
