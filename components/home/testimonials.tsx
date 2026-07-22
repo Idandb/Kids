@@ -30,9 +30,9 @@ export function Testimonials() {
           </h2>
         </Reveal>
 
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="-mx-4 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-3 lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:px-0 lg:pb-0">
           {testimonials.map((t, i) => (
-            <Reveal key={t.name} delay={i * 110} className="h-full">
+            <Reveal key={t.name} delay={i * 110} className="h-full w-[85%] shrink-0 snap-center lg:w-auto lg:shrink">
               <figure className="card-lift flex h-full flex-col gap-4 rounded-3xl bg-card p-7 shadow-elevated">
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold shadow-md shadow-gold/25">
                   <Quote className="h-6 w-6 text-gold-foreground" aria-hidden="true" />

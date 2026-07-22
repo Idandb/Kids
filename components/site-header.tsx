@@ -112,7 +112,7 @@ export function SiteHeader() {
             <a
               href="tel:0535455667"
               onClick={() => trackConversion('phone_click', { source: 'header_mobile' })}
-              className="mt-2 flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-md shadow-navy/15"
+              className="cta-press mt-2 flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-md shadow-navy/15"
             >
               <Phone className="h-4 w-4" aria-hidden="true" />
               <span>חייגו עכשיו <span dir="ltr">053-5455667</span></span>

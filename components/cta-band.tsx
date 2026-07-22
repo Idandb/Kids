@@ -22,7 +22,7 @@ export function CtaBand({
           <p className="text-lg leading-relaxed text-navy-foreground/80 text-pretty">{sub}</p>
           <a
             href="tel:0535455667"
-            className="flex w-fit items-center gap-3 rounded-full border-2 border-gold px-7 py-3.5 text-lg font-bold text-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold hover:text-gold-foreground hover:shadow-lg hover:shadow-gold/30 active:translate-y-0"
+            className="cta-press flex w-fit items-center gap-3 rounded-full border-2 border-gold px-7 py-3.5 text-lg font-bold text-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold hover:text-gold-foreground hover:shadow-lg hover:shadow-gold/30 active:translate-y-0"
           >
             <Phone className="h-5 w-5" aria-hidden="true" />
             <span>חייגו: <span dir="ltr">053-5455667</span></span>

@@ -1,6 +1,10 @@
+'use client'
+
+import { useState } from 'react'
 import { Plus } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 import { JsonLd } from '@/components/json-ld'
+import { cn } from '@/lib/utils'
 
 const faqs = [
   {
@@ -40,6 +44,8 @@ const faqSchema = {
 }
 
 export function Faq() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
   return (
     <section className="relative mx-auto max-w-4xl overflow-hidden px-4 py-20 md:py-28 lg:px-8">
       <div
@@ -55,19 +61,46 @@ export function Faq() {
       </Reveal>
 
       <div className="flex flex-col gap-4">
-        {faqs.map((faq, i) => (
-          <Reveal key={faq.q} delay={i * 70}>
-            <details className="group rounded-2xl border border-border bg-card shadow-soft transition-colors open:border-gold/40">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-6 [&::-webkit-details-marker]:hidden">
-                <h3 className="font-serif text-lg leading-snug">{faq.q}</h3>
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold/10 ring-1 ring-gold/25 transition-transform duration-300 group-open:rotate-45">
-                  <Plus className="h-5 w-5 text-gold" aria-hidden="true" />
-                </span>
-              </summary>
-              <p className="px-6 pb-6 leading-relaxed text-muted-foreground">{faq.a}</p>
-            </details>
-          </Reveal>
-        ))}
+        {faqs.map((faq, i) => {
+          const open = openIndex === i
+          return (
+            <Reveal key={faq.q} delay={i * 70}>
+              <div
+                className={cn(
+                  'rounded-2xl border border-border bg-card shadow-soft transition-colors',
+                  open && 'border-gold/40',
+                )}
+              >
+                <button
+                  type="button"
+                  aria-expanded={open}
+                  onClick={() => setOpenIndex(open ? null : i)}
+                  className="flex w-full cursor-pointer list-none items-center justify-between gap-4 p-6 text-right"
+                >
+                  <h3 className="font-serif text-lg leading-snug">{faq.q}</h3>
+                  <span
+                    className={cn(
+                      'flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold/10 ring-1 ring-gold/25 transition-transform duration-300',
+                      open && 'rotate-45',
+                    )}
+                  >
+                    <Plus className="h-5 w-5 text-gold" aria-hidden="true" />
+                  </span>
+                </button>
+                <div
+                  className={cn(
+                    'grid transition-[grid-template-rows] duration-300 ease-out',
+                    open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
+                  )}
+                >
+                  <div className="overflow-hidden">
+                    <p className="px-6 pb-6 leading-relaxed text-muted-foreground">{faq.a}</p>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          )
+        })}
       </div>
     </section>
   )

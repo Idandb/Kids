@@ -49,9 +49,13 @@ export function BenefitTiers() {
         </p>
       </Reveal>
 
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-5">
+      <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-3 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-5">
         {tiers.map((tier, i) => (
-          <Reveal key={tier.pct} delay={i * 70} className="relative h-full">
+          <Reveal
+            key={tier.pct}
+            delay={i * 70}
+            className="relative h-full w-[72%] shrink-0 snap-center sm:w-auto sm:shrink"
+          >
             {tier.featured && (
               <span className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold px-2.5 py-1 text-[11px] font-bold text-gold-foreground shadow-md sm:px-3 sm:text-xs">
                 הכי נפוץ
